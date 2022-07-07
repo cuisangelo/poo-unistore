@@ -6,7 +6,7 @@
 
 body{background-color: #e2e2e2;}
 
-#cuis1{
+#UNISTORE1{
 height: 80px;
 width: 100%;
 background-color: rgb(26, 26, 26);
@@ -17,7 +17,7 @@ align-items: center;
 position: fixed;
 z-index: 10;
 }
-#cuis1 h1{
+#UNISTORE1 h1{
    justify-content: center;
    margin-left: 7%;
    /*-webkit-text-stroke: 1px rgb(16, 3, 27);*/
@@ -26,7 +26,7 @@ z-index: 10;
    font-size: 60px;
 }
 
-#cuis2{
+#UNISTORE2{
     height: 40%;
     width: 50%;
     margin-right: 17%;
@@ -110,14 +110,14 @@ z-index: 10;
     padding-bottom: 39px;
 }
 
-#cuis3{
+#UNISTORE3{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 0% 1% 0% 1%;
     margin-top: 120px;
 }
-#cuis3 img{
+#UNISTORE3 img{
     object-fit: cover;
     width: 100%;
 }
