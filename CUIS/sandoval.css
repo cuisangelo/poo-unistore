@@ -1,0 +1,22 @@
+#logo{
+    
+    justify-content: center; 
+    
+   
+}
+#logo img{
+    
+    object-fit: cover;
+    margin-left: 30px;
+    margin-top:70px;
+    height: auto;
+    max-width:150px;
+}
+#lupita2{
+
+    z-index:11;
+    object-fit: cover;
+    margin-left: -30px;
+    font-size: large;
+    color:rgb(16, 3, 27);
+}
