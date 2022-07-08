@@ -989,10 +989,10 @@ li.youtube a span {
 .shop_top{
 	padding:5% 0;
 }
-.new-box {
+.oferta-box {
 	right:10px;
 }
-.new-box, .sale-box {
+.oferta-box, .nuevo-box {
 	position: absolute;
 	top:2px;
 	overflow: hidden;
@@ -1017,7 +1017,7 @@ li.youtube a span {
 	top: 0px;
 	z-index: 1;
 }
-.sale-box {
+.nuevo-box {
 	left:10px;
 }
 .nuevo-label {
