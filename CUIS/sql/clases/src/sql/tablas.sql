@@ -25,11 +25,7 @@ CREATE TABLE alumno(
 	apellidos VARCHAR(50),
 	direccion VARCHAR(100),
 	telefono VARCHAR(9),
-	PRIMARY KEY (id_alumno),
-	FOREIGN KEY (nombres) REFERENCES cliente(nombres),
-	FOREIGN KEY (apellidos) REFERENCES cliente(apellidos),
-	FOREIGN KEY (direccion) REFERENCES cliente(direccion),
-	FOREIGN KEY (telefono) REFERENCES cliente(telefono),
+	PRIMARY KEY (id_alumno)
 );
 
 CREATE TABLE pedido(
@@ -46,13 +42,18 @@ CREATE TABLE detalle_pedido(
 	cantidad NUMERIC(3),
 	precio_unitario NUMERIC (9, 2),
 	id_objeto VARCHAR(5),
-	PRIMARY KEY (id_alumno),
-	FOREIGN KEY (cantidad) REFERENCES objeto(cantidad),
-	FOREIGN KEY (precio_unitario) REFERENCES objeto(precio_unitario),
-	FOREIGN KEY (id_objeto) REFERENCES objeto(id_objeto)
+	PRIMARY KEY (id_detalle),
+	FOREIGN KEY (id_objeto) REFERENCES producto(id_objeto)
 );
 
-CREATE SEQUENCE id_objeto START WITH 0;
+CREATE TABLE usuario_contrasena(
+	usuario VARCHAR(50),
+	contrasena VARCHAR(50),
+	id_cliente VARCHAR(9),
+	FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
+);
+
+CREATE SEQUENCE id_objeto START WITH 1;
 
 INSERT INTO producto VALUES (NEXTVAL(id_objeto), 'Mouse pad', 5, 22.00);
 INSERT INTO producto VALUES (NEXTVAL(id_objeto), 'Morral', 5, 30.00);
@@ -64,3 +65,9 @@ INSERT INTO producto VALUES (NEXTVAL(id_objeto), 'Bolsa de papel', 5, 4.50);
 INSERT INTO producto VALUES (NEXTVAL(id_objeto), 'Toalla', 5, 25.00);
 INSERT INTO producto VALUES (NEXTVAL(id_objeto), 'Bandera de escritorio', 5, 40.00);
 INSERT INTO producto VALUES (NEXTVAL(id_objeto), 'Mochila y morral', 5, 45.00);
+
+SELECT * FROM producto;
+
+SELECT * FROM cliente;
+
+SELECT * FROM usuario_contrasena;
