@@ -10,7 +10,7 @@ import uni.edu.pe.apprest.service.ProductoService;
 @CrossOrigin(origins = "*")
 public class DetallePedidoController {
     @Autowired
-    DetallePedidoService servicio;
+    private DetallePedidoService servicio;
 
     @RequestMapping(
             value = "/obtener-carro-de-compras",
@@ -22,8 +22,8 @@ public class DetallePedidoController {
         respuestaProducto.setLista(servicio.obtenerProductos());
         return respuestaProducto;
     }
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(@RequestBody Usuario usuario) {
         return service.register(usuario);
-    }
+    }*/
 }

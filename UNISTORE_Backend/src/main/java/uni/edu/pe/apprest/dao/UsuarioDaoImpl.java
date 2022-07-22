@@ -33,25 +33,22 @@ public class UsuarioDaoImpl implements UsuarioDao {
     }
 
     @Override
-    public String register(Usuario usuario) {
-        boolean flagRegistered = false;
+    public String loginByEmail(Usuario usuario) {
+        boolean flagFound = false;
         getConnection();
         try {
-            String sql = "insert into usuario_contrasena values(?, ?);";
+            String sql = "SELECT cc.correo, cc.contrasena FROM correo_contrasena cc;";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, usuario.getUsuario());
-            ps.setString(2, usuario.getContrasena());
+            /*ps.setString(1, usuario.getUsuario());
+            ps.setString(2, usuario.getContrasena());*/
             ResultSet rs = ps.executeQuery();
-            flagRegistered = true;
             rs.close();
             ps.close();
             closeConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        if(flagRegistered){
-            return "TRUE";
-        }
-        else return "FALSE";
+        if(flagFound) return "ok";
+        else return "not ok";
     }
 }

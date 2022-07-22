@@ -1,0 +1,11 @@
+<div>
+  <form>
+    <input type="text" id="login" placeholder="login" formControlName="usuario">
+    <input type="password" id="password" placeholder="password" formControlName="password">
+    <input type="submit" value="Log In">
+  </form>
+
+  <div *ngIf="errorStatus">
+    <p>{{errorMsg}}</p>
+  </div>
+</div>

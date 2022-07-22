@@ -7,14 +7,16 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { DetalleComponent } from './detalle/detalle.component';
 
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms"
-import {ApiService} from "../ApiService";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms"
+import { ApiService} from "../ApiService";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TiendaComponent,
     DetalleComponent,
+    LoginComponent,
 
   ],
   imports: [

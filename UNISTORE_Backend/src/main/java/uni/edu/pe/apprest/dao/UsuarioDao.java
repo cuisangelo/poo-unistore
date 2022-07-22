@@ -3,5 +3,5 @@ package uni.edu.pe.apprest.dao;
 import uni.edu.pe.apprest.model.Usuario;
 
 public interface UsuarioDao {
-    String register(Usuario usuario);
+    String loginByEmail(Usuario usuario);
 }

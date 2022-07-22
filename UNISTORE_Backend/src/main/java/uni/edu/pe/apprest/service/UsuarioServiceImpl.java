@@ -11,7 +11,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     private UsuarioDao dao;
 
     @Override
-    public String register(Usuario usuario) {
-        return dao.register(usuario);
+    public String loginByEmail(Usuario usuario) {
+        return dao.loginByEmail(usuario);
     }
 }
