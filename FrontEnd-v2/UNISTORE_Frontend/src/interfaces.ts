@@ -19,3 +19,12 @@ export interface Producto{
 export interface RespuestaProducto{
   lista: Producto[];
 }
+export interface Cliente{
+  id_cliente:string;
+  nombres:string;
+  apellidos:string;
+  direccion: string;
+  telefono: string;
+  correo:string;
+  contrasena:string;
+}

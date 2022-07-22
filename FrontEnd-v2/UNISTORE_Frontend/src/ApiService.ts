@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {RespuestaProducto, Usuario, UsuarioRespuesta} from "./interfaces";
+import {Cliente, RespuestaProducto, Usuario, UsuarioRespuesta} from "./interfaces";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {FormControl, ɵFormGroupValue, ɵTypedOrUntyped} from "@angular/forms";
 
@@ -28,6 +28,13 @@ export class ApiService {
 
   obtenerProducto(): Observable<RespuestaProducto> {
     return this.http.post<RespuestaProducto>('http://localhost:8080/obtener-productos', null, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+  agregarCliente(data: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>('http://localhost:8080/agregar-cliente', data, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandl)

@@ -7,12 +7,16 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { HttpClientModule } from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TiendaComponent,
-    DetalleComponent
+    DetalleComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

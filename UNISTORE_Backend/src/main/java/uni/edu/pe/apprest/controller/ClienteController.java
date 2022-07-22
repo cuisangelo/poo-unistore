@@ -24,4 +24,13 @@ public class ClienteController {
         RespuestaCliente respuestaCliente = new RespuestaCliente(servicio.obtenerCliente());
         return respuestaCliente;
     }
+    @RequestMapping(
+            value = "/agregar-cliente",
+            method = RequestMethod.POST,
+            consumes = "application/json;charset=utf-8",
+            produces = "application/json;charset=utf-8"
+    )
+    public @ResponseBody Cliente agregarCliente(@RequestBody Cliente cliente){
+        return servicio.agregarCliente(cliente);
+    }
 }

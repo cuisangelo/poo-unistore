@@ -1,0 +1,47 @@
+<div class="container-full">
+  <div class="w-1/3 mx-auto">
+    <div class="text-center text-blue-700 text-5xl">
+      Registrate
+    </div>
+    <div class="grid grid-cols-2">
+      <div >
+        <div>
+          <div class="classDiv">
+            <label>Email *</label><br>
+            <input type="email" placeholder="Escriba su correo" class="border border-indigo-500 w-full mb-2 entrada" [(ngModel)]="correo"/>
+          </div>
+          <div class="classDiv">
+            <label>Contraseña *</label><br>
+            <input type="password" placeholder="Escriba su contraseña" class="border border-indigo-500 w-full mb-2 entrada" [(ngModel)]="contrasena"/>
+          </div>
+        </div>
+        <div class="classDiv">
+          <label>Nombre *</label><br>
+          <input type="text" placeholder="Escriba su nombre" class="border border-indigo-500 w-full mb-2 entrada" [(ngModel)]="nombres"/>
+        </div>
+        <div class="classDiv">
+          <label>Apellidos *</label><br>
+          <input type="text" placeholder="Escriba su apellido" class="border border-indigo-500 w-full mb-2 entrada"[(ngModel)]="apellidos"/>
+        </div>
+        <div class="classDiv">
+          <label>Dirección *</label><br>
+          <input type="text" placeholder="Escriba su direccion" class="border border-indigo-500 w-full mb-2 entrada " [(ngModel)]="direccion"/>
+        </div>
+        <div class="classDiv">
+          <label>Telefono *</label><br>
+          <input type="text" placeholder="Escriba su telefono" class="border border-indigo-500 w-full mb-2 entrada" [(ngModel)]="telefono"/>
+        </div>
+        <div class="classDiv">
+          <p>* Los campos son obligatorios</p>
+          <button class="bg-blue-400 text-white w-full rounded-md" (click)="registrar()">  Registrar  </button><br>
+        </div>
+        <div>
+          <button class="bg-blue-400 text-white w-full rounded-md" ><a href="tienda">Volver a la tienda</a></button>
+        </div>
+      </div>
+      <div >
+        <img src="assets/imagenes/gatorayo.jpg">
+      </div>
+    </div>
+  </div>
+</div>
