@@ -2016,13 +2016,6 @@ h4.m_11 {
 	 width:50px !important;
 	 height:50px !important;
   }
-  .register-top-grid(
-  	margin-bottom:20px;
-  )
-  .nav {
-	top: 66px;
-	right: 8px;
-  }
   .register-top-grid div, .register-bottom-grid div {
 	width: 100%;
 	float: none;
