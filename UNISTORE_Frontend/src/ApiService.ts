@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {Usuario, UsuarioRespuesta} from "./interfaces";
-import {Observable} from "rxjs";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {RespuestaProducto, Usuario, UsuarioRespuesta} from "./interfaces";
+import {catchError, Observable, retry, throwError} from "rxjs";
 import {FormControl, ɵFormGroupValue, ɵTypedOrUntyped} from "@angular/forms";
 
 @Injectable({
@@ -9,14 +9,32 @@ import {FormControl, ɵFormGroupValue, ɵTypedOrUntyped} from "@angular/forms";
 })
 export class ApiService {
 
-  url: string = "http://localhost:8080/login"
+  httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json;charset=utf-8'})};
+
+  errorHandl(error:any) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+    } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
+  }
 
   constructor(private http: HttpClient) {
   }
 
-  onLogin(form: ɵTypedOrUntyped<{ password: FormControl<string | null>; usuario: FormControl<string | null> }, ɵFormGroupValue<{ password: FormControl<string | null>; usuario: FormControl<string | null> }>, any>): Observable<UsuarioRespuesta> {
-    let direccion = this.url;
-    return this.http.post<UsuarioRespuesta>(direccion, form);
+
+  obtenerProducto(): Observable<RespuestaProducto> {
+    return this.http.post<RespuestaProducto>('http://localhost:8080/obtener-productos', null, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
   }
 
+  onLogin(form: ɵTypedOrUntyped<{password: FormControl<string | null>; usuario: FormControl<string | null>}, ɵFormGroupValue<{password: FormControl<string | null>; usuario: FormControl<string | null>}>, any>) {
+
+  }
 }
