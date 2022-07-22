@@ -40,10 +40,10 @@ public class clienteDaoImpl implements clienteDao{
 
     @Override
     public Cliente agregarCliente(Cliente cliente) {
-        String sql = " INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?,?, ?,?,?);";
+        obtenerConexion();
         try {
-            obtenerConexion();
-            PreparedStatement sentencia = conexion.prepareStatement(sql);
+            String sql = " INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?,?, ?,?,?);";
+            PreparedStatement ps = conexion.prepareStatement(sql);
             sentencia.setString(1, cliente.getNombres());
             sentencia.setString(2, cliente.getApellidos());
             sentencia.setString(3, cliente.getDireccion());

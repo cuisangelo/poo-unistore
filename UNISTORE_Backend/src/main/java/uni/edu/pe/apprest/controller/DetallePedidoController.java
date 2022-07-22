@@ -9,7 +9,7 @@ import uni.edu.pe.apprest.service.ProductoService;
 @RestController
 @CrossOrigin(origins = "*")
 public class DetallePedidoController {
-    @Autowired
+    /*@Autowired
     private DetallePedidoService servicio;
 
     @RequestMapping(
