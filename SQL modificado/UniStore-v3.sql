@@ -1,8 +1,10 @@
+CREATE DATABASE unistore;
+
 USE unistore;
 
 CREATE TABLE producto(
 	id_producto VARCHAR(5),
-	nombre VARCHAR(100),unistore
+	nombre VARCHAR(100),
 	descripcion VARCHAR(100),
 	cantidad NUMERIC(3),
 	precio_unitario NUMERIC (9, 2),
@@ -18,6 +20,8 @@ CREATE TABLE cliente(
 	apellidos VARCHAR(50),
 	direccion VARCHAR(100),
 	telefono CHAR(9),
+	correo VARCHAR(50),
+	contrasena VARCHAR(50),
 	PRIMARY KEY (id_cliente)
 );
 
@@ -48,12 +52,6 @@ CREATE TABLE detalle_pedido(
 	FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
 );
 
-CREATE TABLE correo_contrasena(
-	correo VARCHAR(50),
-	contrasena VARCHAR(50),
-	id_cliente VARCHAR(9),
-	FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
-);
 
 CREATE SEQUENCE id_producto START WITH 1;
 
@@ -67,9 +65,19 @@ INSERT INTO producto VALUES (NEXTVAL(id_producto), 'Bolsa de papel UNI','Bolsa d
 INSERT INTO producto VALUES (NEXTVAL(id_producto), 'Toalla UNI','Toalla', 5, 25.00,precio_unitario*1.3,'https://i.postimg.cc/BnhGdh8G/pic25.jpg');
 INSERT INTO producto VALUES (NEXTVAL(id_producto), 'Bandera de escritorio','Bandera de escritorio', 5, 40.00,precio_unitario*1.3,'https://i.postimg.cc/vHg91js0/pic21.jpg');
 INSERT INTO producto VALUES (NEXTVAL(id_producto), 'Mochila UNI','Mochila', 5, 45.00,precio_unitario*1.3,'https://i.postimg.cc/y88MXFLp/pic8.jpg');
-cliente
 
 SELECT cl.id_cliente, cl.nombres, cl.apellidos FROM cliente cl;
+CREATE SEQUENCE id_cliente START WITH 1;
+
+INSERT INTO cliente VALUES (cliente, 'Luis', 'Rodriguez', 'Lima', '333333331','prueba@gmai.com','del1al8');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Sergio', 'Yupanqui', 'Lima', '333333332','prueba@gmai.com','del1al8');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Nestor', 'Audante', 'Lima', '333333333','prueba@gmai.com','del1al8');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Daniel', 'Zanabria', 'Lima', '333333334','prueba@gmai.com','del1al8');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Jesus', 'Quispe', 'Lima',  '333333335','prueba@gmai.com','del1al8');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Javier', 'Canchano', 'Lima',  '333333336','prueba@gmai.com','del1al8');
+
+INSERT INTO cliente VALUES VALUES	(NEXTVAL(id_cliente),'Cliente 1', 'Apellido 1','Su casa', '333333336','prueba@gmai.com','del1al8');
+
 CREATE SEQUENCE id_alumno START WITH 1;
 
 INSERT INTO alumno VALUES(NEXTVAL(id_alumno), 1);
@@ -77,5 +85,5 @@ INSERT INTO alumno VALUES(NEXTVAL(id_alumno), 2);
 INSERT INTO alumno VALUES(NEXTVAL(id_alumno), 4);
 INSERT INTO alumno VALUES(NEXTVAL(id_alumno), 5);
 
-SELECT al.id_alumno, cl.id_cliente, cl.nombres, cl.apellidos FROM alumno al
-INNER JOIN cliente cl ON (al.id_cliente = cl.id_cliente);
+SELECT al.id_alumno, cl.id_cliente, cl.nombres, cl.apellidos, direccion , telefono ,correo cc.correo, cc.contrasena FROM alumno al
+INNER JOIN cliente cl ON (al.id_cliente = cl.id_cliente);cliente
