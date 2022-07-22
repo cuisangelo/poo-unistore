@@ -7,7 +7,8 @@ import { TiendaComponent } from './tienda/tienda.component';
 import { DetalleComponent } from './detalle/detalle.component';
 
 import { HttpClientModule } from "@angular/common/http";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { FormsModule } from "@angular/forms"
+import {ApiService} from "../ApiService";
 
 @NgModule({
   declarations: [
@@ -19,11 +20,10 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
