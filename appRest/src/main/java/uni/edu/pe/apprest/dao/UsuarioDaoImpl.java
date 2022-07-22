@@ -39,7 +39,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
         try {
             String sql = "insert into usuario_contrasena values(?, ?);";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, usuario.getId_usuario());
+            ps.setString(1, usuario.getUsuario());
             ps.setString(2, usuario.getContrasena());
             ResultSet rs = ps.executeQuery();
             flagRegistered = true;
