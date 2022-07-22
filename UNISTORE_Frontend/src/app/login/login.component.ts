@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import {FormGroup, FormControl, Validators, ɵTypedOrUntyped, ɵFormGroupValue} from "@angular/forms";
+import {ApiService} from "../../ApiService";
+import {Usuario} from "../../interfaces";
 
 @Component({
   selector: 'app-login',
@@ -13,12 +15,14 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }
 
-  onLogin(form: any) {
-    console.log(form)
+  onLogin(form: ɵTypedOrUntyped<{ password: FormControl<string | null>; usuario: FormControl<string | null> }, ɵFormGroupValue<{ password: FormControl<string | null>; usuario: FormControl<string | null> }>, any>) {
+    this.api.onLogin(form).subscribe(data =>{
+      console.log(data)
+    });
   }
 }
