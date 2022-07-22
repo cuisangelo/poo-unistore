@@ -1,9 +1,23 @@
-<p>detalle works!</p>
 <div >
-  <div *ngIf="producto!=null">
-    <div >{{producto.descripcion}}</div>
-    <div >{{producto.descripcion}}</div>
+  <div>
+    <div class="border-2 bg-[url('https://raw.githubusercontent.com/LuisAngeloRP/POO_UNI_STORE/main/UNISTORE_Frontend/src/assets/imagenes/asdf.jpg?token=GHSAT0AAAAAABWHZ3DW5TAHSCKGK35EBPTEYW2OW6Q')] space-y-4">
+      <div class="w-1/2 mx-auto border-2 grid grid-cols-1 gap-2 bg-white">
+        <div class="box-border border-3 items-center	" ><p class="text-center uppercase font-bold">Categoria</p></div>
+        <div class="  pt-3 flex flex-wrap">
+        <div >
+          <div *ngIf="producto!=null">
+            <img [src]="producto.url_imagen" >
+            <div >{{producto.nombre}}</div>
+            <div >{{producto.descripcion}}</div>
+
+          </div>
+          <input type="text" [(ngModel)]="indice" style="border: 2px solid blue" class="rounded-md">
+          <button (click)="obtenerProducto()" class="bg-orange-700 text-gray-50 font-semibold rounded-md">Obtener Producto</button><br>
+          <button class="bg-orange-700 text-gray-50 font-semibold rounded-md"><a href="tienda">Ver tienda</a></button>
+
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <input type="text" [(ngModel)]="indice" style="border: 2px solid blue" class="rounded-md">
-  <button (click)="obtenerProducto()" class="bg-orange-700 text-gray-50 font-semibold rounded-md">Obtener Producto</button>
 </div>

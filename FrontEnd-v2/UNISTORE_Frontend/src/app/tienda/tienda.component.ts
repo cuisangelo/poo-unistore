@@ -8,16 +8,15 @@ import {ApiService} from "../../ApiService";
   styleUrls: ['./tienda.component.scss']
 })
 export class TiendaComponent implements OnInit {
+  producto?: Producto=undefined;
+  lista:Producto[] = []
+  indice: number = -1;
+  constructor(private api: ApiService ) { }
   ngOnInit(): void {
     this.api.obtenerProducto().subscribe(data =>{
       this.lista = data.lista;
     })
   }
-
-  producto?: Producto=undefined;
-  lista:Producto[] = []
-  indice: number = -1;
-  constructor(private api: ApiService ) { }
 
   obtenerProducto(): void {
     this.producto = this.lista[this.indice];
