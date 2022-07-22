@@ -8,12 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Cliente {
-    private String id_detalle;
     private String id_cliente;
-    private String id_producto;
-    private String descripcion;
-    private int cantidad_seleccionada;
-    private float precio_unitario ;
-    private float sub_precio;
-    private String url_imagen;
+    private String nombres;
+    private String apellidos;
+    private String  direccion;
+    private String telefono ;
 }

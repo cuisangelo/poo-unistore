@@ -44,14 +44,13 @@ public class clienteDaoImpl implements clienteDao{
         try {
             String sql = " INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?,?, ?,?,?);";
             PreparedStatement ps = conexion.prepareStatement(sql);
-            sentencia.setString(1, cliente.getNombres());
-            sentencia.setString(2, cliente.getApellidos());
-            sentencia.setString(3, cliente.getDireccion());
-            sentencia.setString(4, cliente.getTelefono());
-            sentencia.setString(5, cliente.getCorreo());
-            sentencia.setString(6, cliente.getContrasena());
-            sentencia.executeUpdate();
-            cerrarConexion(null,sentencia);
+            ps.setString(1, cliente.getId_cliente());
+            ps.setString(2, cliente.getNombres());
+            ps.setString(3, cliente.getApellidos());
+            ps.setString(4, cliente.getDireccion());
+            ps.setString(5, cliente.getApellidos());
+            ps.executeUpdate();
+            cerrarConexion(null, ps);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

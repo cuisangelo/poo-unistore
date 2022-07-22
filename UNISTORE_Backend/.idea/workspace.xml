@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c624cb64-e5a9-44fb-a1d2-8d7a853a1fd9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/controller/DetallePedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/controller/DetallePedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/dao/clienteDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/dao/clienteDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/model/Cliente.java" afterDir="false" />
     </list>
@@ -50,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Jesús/Desktop/UNI/CICLO 3/SI302V/POO_UNI_STORE/PRUEBA LOGIN/UNISTORE_Frontend",
+    "last_opened_file_path": "C:/Users/Jesús/Desktop/UNI/CICLO 3/SI302V/poo-2022-1/misc/PC3_21II",
     "nodejs_package_manager_path": "npm",
     "show.run.dashboard.notification": "false",
     "spring.configuration.checksum": "fecd4cc33a569338c5d34e9d0db867db"
@@ -102,7 +102,8 @@
       <workItem from="1658482903280" duration="765000" />
       <workItem from="1658500900672" duration="3163000" />
       <workItem from="1658520822065" duration="348000" />
-      <workItem from="1658521344567" duration="2082000" />
+      <workItem from="1658521344567" duration="2586000" />
+      <workItem from="1658525261185" duration="629000" />
     </task>
     <servers />
   </component>
