@@ -5,33 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c624cb64-e5a9-44fb-a1d2-8d7a853a1fd9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../appRest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/unistore_backend/UnistoreBackendApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uni/edu/pe/unistore_backend/UnistoreBackendApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UNISTORE_Frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UNISTORE_Frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UNISTORE_Frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../UNISTORE_Frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UNISTORE_Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../UNISTORE_Frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UNISTORE_Frontend/src/app/tienda/tienda.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../UNISTORE_Frontend/src/app/tienda/tienda.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/main/java/uni/edu/pe/apprest/AppRestApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/main/java/uni/edu/pe/apprest/controller/UsuarioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/main/java/uni/edu/pe/apprest/dao/UsuarioDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/main/java/uni/edu/pe/apprest/dao/UsuarioDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/main/java/uni/edu/pe/apprest/model/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/main/java/uni/edu/pe/apprest/service/UsuarioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/main/java/uni/edu/pe/apprest/service/UsuarioServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../appRest/src/test/java/uni/edu/pe/apprest/AppRestApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,16 +30,21 @@
     </option>
   </component>
   <component name="ProjectId" id="2CH7lTcQ00qI09Eewn5RCZsv7V1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/MSI/Documents/GitHub/POO_UNI_STORE/appRest",
+    "last_opened_file_path": "C:/Users/Jesús/Desktop/UNI/CICLO 3/SI302V/poo-2022-1/semana15/appAngular",
     "show.run.dashboard.notification": "false",
     "spring.configuration.checksum": "fecd4cc33a569338c5d34e9d0db867db"
   }
@@ -92,6 +74,8 @@
       <option name="presentableId" value="Default" />
       <updated>1658447806255</updated>
       <workItem from="1658447808253" duration="785000" />
+      <workItem from="1658449106487" duration="1090000" />
+      <workItem from="1658458765985" duration="1373000" />
     </task>
     <servers />
   </component>
