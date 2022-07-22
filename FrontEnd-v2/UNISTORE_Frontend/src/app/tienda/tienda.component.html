@@ -6,18 +6,17 @@
   <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Tienda</p></a></div>
   <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Perfil</p></a></div>
 </div>
-<div >
   <div>
-    <div class="border-2 bg-[url('https://raw.githubusercontent.com/LuisAngeloRP/POO_UNI_STORE/main/UNISTORE_Frontend/src/assets/imagenes/asdf.jpg?token=GHSAT0AAAAAABWHZ3DW5TAHSCKGK35EBPTEYW2OW6Q')] space-y-4">
-      <div class="w-1/2 mx-auto border-2 grid grid-cols-1 gap-2 bg-white">
-        <div class="box-border border-3 items-center	" ><p class="text-center uppercase font-bold">Categoria</p></div>
-        <div class="  pt-3 flex flex-wrap">
+    <div class="border-2 bg-[url('assets/imagenes/asdf.jpg')] space-y-4">
+      <div class="w-fit mx-auto border-2 bg-white">
+        <div class="box-border border-3 items-center" ><p class="text-center uppercase font-bold">Categoria</p></div>
+        <div class="  pt-3 grid grid-cols-4 gap-4  ">
           <article *ngFor="let item of lista, let indice=index">
-            <div class="md:container md:mx-auto box-border h-128 w-32 p-0 border-2 rounded-lg">
+            <div class=" box-border md:box-content border-2 rounded-lg min-h-sm curso static pt-1 pr-1 pb-1 pl-1">
             <img [src]="item.url_imagen" class="img-responsive rounded-lg pb-2 h-200 margen">
               <div>
-                <div class="text-center"><a class="text-xl font-semibold ">{{item.nombre}}</a></div>
-                <div><a class="">{{item.descripcion}}</a></div>
+                <div class="text-center"><a class="text-md font-semibold ">{{item.nombre}}</a></div>
+                <div><a class="text-xs">{{item.descripcion}}</a></div>
               </div>
               <div class="grid grid-cols-2 gap-1">
                 <div class="text-center line-through font-semibold">{{item.precio_oferta}}</div>
@@ -27,14 +26,14 @@
                 <div ><a class="btn" ><p class="text-center">Carrito</p></a></div>
                 <div ><a class="btn" ><p class="text-center" [routerLink]="['/detalle/',indice]">Detalle</p></a></div>
               </div>
-            <div class="content-center text-center bg-red-500 rounded "><p class="text-white font-bold">OFERTA</p></div>
+            <div class="content-center text-center bg-[#fe0000] rounded absolute top-1 left-1 flex"><span class="text-white text-xs font-bold">OFERTA</span></div>
             </div>
           </article>
         </div>
       </div>
     </div>
   </div>
-</div>
+
   <!--2-->
   <!--
     <div class="md:container md:mx-auto box-border h-128 w-32 p-0 border-2 rounded-lg">
