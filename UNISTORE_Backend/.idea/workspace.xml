@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c624cb64-e5a9-44fb-a1d2-8d7a853a1fd9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Documentos/UniStore/POO_UNI_STORE/UNISTORE_Backend",
+    "last_opened_file_path": "C:/Users/MSI/Documents/GitHub/POO_UNI_STORE/FrontEnd-v2/UNISTORE_Frontend",
     "nodejs_package_manager_path": "npm",
     "show.run.dashboard.notification": "false",
     "spring.configuration.checksum": "3e2661f23955e99a0d3c8366a4dcc648"
