@@ -69,12 +69,13 @@ INSERT INTO producto VALUES (NEXTVAL(id_producto), 'Mochila UNI','Mochila', 5, 4
 SELECT cl.id_cliente, cl.nombres, cl.apellidos FROM cliente cl;
 CREATE SEQUENCE id_cliente START WITH 1;
 
-INSERT INTO cliente VALUES (cliente, 'Luis', 'Rodriguez', 'Lima', '333333331','prueba@gmai.com','del1al8');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Luis', 'Rodriguez', 'Lima', '333333331','prueba@gmai.com','del1al8');
 INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Sergio', 'Yupanqui', 'Lima', '333333332','prueba@gmai.com','del1al8');
 INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Nestor', 'Audante', 'Lima', '333333333','prueba@gmai.com','del1al8');
 INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Daniel', 'Zanabria', 'Lima', '333333334','prueba@gmai.com','del1al8');
 INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Jesus', 'Quispe', 'Lima',  '333333335','prueba@gmai.com','del1al8');
 INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Javier', 'Canchano', 'Lima',  '333333336','prueba@gmai.com','del1al8');
+
 
 INSERT INTO cliente VALUES VALUES	(NEXTVAL(id_cliente),'Cliente 1', 'Apellido 1','Su casa', '333333336','prueba@gmai.com','del1al8');
 

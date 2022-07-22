@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c624cb64-e5a9-44fb-a1d2-8d7a853a1fd9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/ApiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/ApiService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/tienda/tienda.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/tienda/tienda.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/interfaces.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/dao/clienteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/dao/clienteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/dao/clienteDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/dao/clienteDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/service/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/service/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uni/edu/pe/apprest/service/ClienteServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

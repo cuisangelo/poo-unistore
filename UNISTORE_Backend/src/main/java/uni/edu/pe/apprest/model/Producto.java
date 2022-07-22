@@ -12,7 +12,7 @@ public class Producto {
     private String nombre;
     private String descripcion;
     private int cantidad;
-    private float precio_unitario;
     private float precio_oferta;
+    private float precio_unitario;
     private String url_imagen;
 }

@@ -40,8 +40,8 @@ public class ProductoDaoImpl implements ProductoDao{
                 resultado.getString("nombre"),
                 resultado.getString("descripcion"),
                 resultado.getInt("cantidad"),
-                resultado.getFloat("precio_unitario"),
                 resultado.getFloat("precio_oferta"),
+                resultado.getFloat("precio_unitario"),
                 resultado.getString("url_imagen")
         );
         return producto;
