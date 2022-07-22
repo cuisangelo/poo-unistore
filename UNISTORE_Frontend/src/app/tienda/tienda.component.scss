@@ -1,5 +1,14 @@
 /*--shop--*/
-
+.nuevo-box {
+  position: absolute;
+  top: 2px;
+  overflow: hidden;
+  height: 38px;
+  min-width: 70px;
+  text-align: left;
+  z-index: 0;
+  display: inline-block;
+}
 
 .oferta-box {
   right: 10px;
@@ -13,16 +22,7 @@
   display: inline-block;
 }
 
-.nuevo-box {
-  position: absolute;
-  top: 2px;
-  overflow: hidden;
-  height: 38px;
-  min-width: 70px;
-  text-align: left;
-  z-index: 0;
-  display: inline-block;
-}
+
 
 .oferta-label {
   font-size: 0.85em;
