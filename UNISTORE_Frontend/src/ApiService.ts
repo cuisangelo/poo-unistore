@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {RespuestaProducto, Usuario, UsuarioRespuesta} from "./interfaces";
+import {HttpClient, HttpHeaders } from "@angular/common/http";
+import {RespuestaProducto, Usuario, UsuarioRespuesta } from "./interfaces";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {FormControl, ɵFormGroupValue, ɵTypedOrUntyped} from "@angular/forms";
 
@@ -8,6 +8,8 @@ import {FormControl, ɵFormGroupValue, ɵTypedOrUntyped} from "@angular/forms";
   providedIn: 'root'
 })
 export class ApiService {
+
+  url: string = "http://localhost:8080"
 
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json;charset=utf-8'})};
 
@@ -34,7 +36,8 @@ export class ApiService {
       );
   }
 
-  onLogin(form: ɵTypedOrUntyped<{password: FormControl<string | null>; usuario: FormControl<string | null>}, ɵFormGroupValue<{password: FormControl<string | null>; usuario: FormControl<string | null>}>, any>) {
-
+  loginByEmail(form: Usuario): Observable<UsuarioRespuesta> {
+    let direccion = this.url;
+    return this.http.post<UsuarioRespuesta>(direccion, form);
   }
 }

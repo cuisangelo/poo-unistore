@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c624cb64-e5a9-44fb-a1d2-8d7a853a1fd9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/register/register.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UNISTORE_Frontend/src/ApiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../UNISTORE_Frontend/src/ApiService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UNISTORE_Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../UNISTORE_Frontend/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +51,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/MSI/Documents/GitHub/POO_UNI_STORE/FrontEnd-v2/UNISTORE_Frontend",
+    "last_opened_file_path": "C:/Users/Jesús/Desktop/UNI/CICLO 3/SI302V/POO_UNI_STORE/UNISTORE_Backend",
     "nodejs_package_manager_path": "npm",
     "show.run.dashboard.notification": "false",
-    "spring.configuration.checksum": "3e2661f23955e99a0d3c8366a4dcc648"
+    "spring.configuration.checksum": "fecd4cc33a569338c5d34e9d0db867db"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -79,7 +80,7 @@
     </configuration>
     <configuration name="AppRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
-      <module name="appRest" />
+      <module name="UNISTORE_Backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="uni.edu.pe.apprest.AppRestApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,6 +102,7 @@
       <workItem from="1658468826622" duration="8406000" />
       <workItem from="1658482903280" duration="765000" />
       <workItem from="1658500900672" duration="3163000" />
+      <workItem from="1658520822065" duration="348000" />
     </task>
     <servers />
   </component>
