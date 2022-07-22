@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.2</version>
+		<version>2.7.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>uni.edu.pe</groupId>
-	<artifactId>UNISTORE_Backend</artifactId>
+	<artifactId>appRest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UNISTORE_Backend</name>
-	<description>UNISTORE_Backend</description>
+	<name>appRest</name>
+	<description>appRest</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
