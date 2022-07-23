@@ -10,49 +10,53 @@
   <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">Tienda</p></a></div>
   <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">Perfil</p></a></div>
 </div>
+<div class="bg-contain bg-[url('assets/imagenes/asdf.jpg')]">
 <div class=" bg-auto bg-no-repeat ">
 
         <div class="mx-auto w-1/2">
           <div class="classDiv">
            <form [formGroup]="registerForm" (ngSubmit)="registerByEmail(registerForm.value)">
-          <p class="font-semibold">Nombre</p>
-          <input type="text" placeholder="Escriba su nombre" class="border border-indigo-500 w-full mb-2" id="nombres" formControlName="nombres"/>
+          <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Nombre</p>
+          <input type="text" placeholder="Escriba su nombre" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="nombres" formControlName="nombres"/>
         <div>
         <div class="classDiv">
-          <p class="font-semibold">Apellido</p>
-          <input type="text" placeholder="Escriba su apellido" class="border border-indigo-500 w-full mb-2" id="apellidos" formControlName="apellidos"/>
+          <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Apellido</p>
+          <input type="text" placeholder="Escriba su apellido"class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="apellidos" formControlName="apellidos"/>
         </div>
         </div>
         <div class="grid grid-cols-2">
           <div class="classDiv">
-            <p class="font-semibold">Correo</p>
-            <input type="email" placeholder="Escriba su correo" class="border border-indigo-500 w-full mb-2" id="correo" formControlName="correo"/>
+            <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Correo</p>
+            <input type="email" placeholder="Escriba su correo" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="correo" formControlName="correo"/>
           </div>
           <div class="classDiv">
-            <p class="font-semibold">Contraseña</p>
-            <input type="password" placeholder="Escriba su contraseña" class="border border-indigo-500 w-full mb-2" id="contrasena" formControlName="contrasena"/>
+            <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Contraseña</p>
+            <input type="password" placeholder="Escriba su contraseña" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="contrasena" formControlName="contrasena"/>
           </div>
         </div>
         <div class="classDiv">
-          <p class="font-semibold">Direccion</p>
-          <input type="text" placeholder="Escriba su direccion" class="border border-indigo-500 w-full mb-2" id="direccion" formControlName="direccion"/>
+          <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Direccion</p>
+          <input type="text" placeholder="Escriba su direccion" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="direccion" formControlName="direccion"/>
         </div>
         <div class="classDiv">
-          <p class="font-semibold">Telefono</p>
-          <input type="text" placeholder="Escriba su telefono" class="border border-indigo-500 w-full mb-2" id="telefono"  formControlName="telefono"/>
+          <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Telefono</p>
+          <input type="text" placeholder="Escriba su telefono" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="telefono"  formControlName="telefono"/>
         </div>
-        <input class=" bg-blue-400 hover:bg-sky-700 text-white w-full rounded-md cursor-pointer tracking-wider" type="submit" value="Log In">
+        <div class="space-y-2">
+          <input class="bg-[#3babba] hover:bg-sky-700 text-white w-full rounded-md" type="submit" value="Registrate">
+          <div>
+            <button class="bg-[#3babba] hover:bg-sky-700 text-white w-full rounded-md" ><a href="login">¿Ya estas registrado? Logeate</a></button>
+          </div>
+        </div>
     </form>
     <div *ngIf="errorStatus">
       <p>{{errorMsg}}</p>
     </div>
-        <div>
-          <button class="bg-blue-400 hover:bg-sky-700 text-white w-full rounded-md cursor-pointer tracking-wider" ><a href="login">¿Ya estas registrado? Logeate</a></button>
-        </div>
+
       </div>
 
     <div>
-      <img class="h-screen" src="assets/imagenes/uni.jpg">
+      <img  class=" rounded-lg border-2 border-[#3babba] " src="assets/imagenes/uni.jpg">
     </div></div>
-      </div>
+</div></div>
 
