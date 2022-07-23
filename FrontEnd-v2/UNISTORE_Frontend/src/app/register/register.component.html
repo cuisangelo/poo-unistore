@@ -1,9 +1,5 @@
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Registro</title>
 </head>
 <div class="flex flex-row space-x-4 pt-2 pb-2 bg-[#6a1b0f]">
@@ -16,8 +12,19 @@
 </div>
 <div class="container-full bg-[url('assets/imagenes/asdf.jpg')]">
   <div class="w-fit mx-auto border-2 bg-white grid grid-cols-2 ">
-      <div>
-        <div>
+      <div class="border-2">
+
+        <div class="border-2 grid grid-cols-2">
+          <div class="classDiv">
+          <label>Nombre</label><br>
+          <input type="text" placeholder="Escriba su nombre" class="border-2 border-indigo-500 w-full mb-2 entrada" [(ngModel)]="nombres"/>
+        </div>
+        <div class="classDiv">
+          <label>Apellidos</label><br>
+          <input type="text" placeholder="Escriba su apellido" class="border-2 border-indigo-500 w-full mb-2 entrada"[(ngModel)]="apellidos"/>
+        </div>
+        </div>
+        <div class="grid grid-cols-2">
           <div class="classDiv">
             <label>Email</label><br>
             <input type="email" placeholder="Escriba su correo" class="font-verdana border-2 border-indigo-500 w-full entrada" [(ngModel)]="correo"/>
@@ -26,14 +33,6 @@
             <label>Contraseña</label><br>
             <input type="password" placeholder="Escriba su contraseña" class="border-2 border-indigo-500 w-full mb-2 entrada" [(ngModel)]="contrasena"/>
           </div>
-        </div>
-        <div class="classDiv">
-          <label>Nombre</label><br>
-          <input type="text" placeholder="Escriba su nombre" class="border-2 border-indigo-500 w-full mb-2 entrada" [(ngModel)]="nombres"/>
-        </div>
-        <div class="classDiv">
-          <label>Apellidos</label><br>
-          <input type="text" placeholder="Escriba su apellido" class="border-2 border-indigo-500 w-full mb-2 entrada"[(ngModel)]="apellidos"/>
         </div>
         <div class="classDiv">
           <label>Dirección</label><br>
