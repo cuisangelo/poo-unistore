@@ -1,9 +1,9 @@
-package uni.edu.pe.backendv3ladefinitiva.service;
+package uni.edu.pe.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uni.edu.pe.backendv3ladefinitiva.dao.ProductoDao;
-import uni.edu.pe.backendv3ladefinitiva.model.Producto;
+import uni.edu.pe.backend.dao.ProductoDao;
+import uni.edu.pe.backend.model.Producto;
 
 import java.util.List;
 

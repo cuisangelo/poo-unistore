@@ -1,10 +1,10 @@
-package uni.edu.pe.backendv3ladefinitiva;
+package uni.edu.pe.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackEndV3LaDefinitivaApplicationTests {
+class BackendApplicationTests {
 
 	@Test
 	void contextLoads() {

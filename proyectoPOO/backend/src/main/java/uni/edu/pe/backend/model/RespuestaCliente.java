@@ -1,4 +1,4 @@
-package uni.edu.pe.backendv3ladefinitiva.model;
+package uni.edu.pe.backend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +9,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RespuestaProducto {
-    List<Producto> lista;
+public class RespuestaCliente {
+    private List<Cliente> cliente;
 }

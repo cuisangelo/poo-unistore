@@ -1,9 +1,9 @@
-package uni.edu.pe.backendv3ladefinitiva.dao;
+package uni.edu.pe.backend.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import uni.edu.pe.backendv3ladefinitiva.model.Producto;
+import uni.edu.pe.backend.model.Producto;
 
 import java.sql.*;
 import java.util.ArrayList;

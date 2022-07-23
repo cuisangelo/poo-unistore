@@ -1,6 +1,6 @@
-package uni.edu.pe.backendv3ladefinitiva.dao;
+package uni.edu.pe.backend.dao;
 
-import uni.edu.pe.backendv3ladefinitiva.model.Producto;
+import uni.edu.pe.backend.model.Producto;
 
 import java.util.List;
 

@@ -1,13 +1,13 @@
-package uni.edu.pe.backendv3ladefinitiva;
+package uni.edu.pe.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BackEndV3LaDefinitivaApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackEndV3LaDefinitivaApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }

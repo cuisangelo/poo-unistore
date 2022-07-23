@@ -1,11 +1,11 @@
-package uni.edu.pe.backendv3ladefinitiva.service;
+package uni.edu.pe.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uni.edu.pe.backendv3ladefinitiva.dao.ClienteDao;
-import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
-import uni.edu.pe.backendv3ladefinitiva.model.ClienteRegister;
-import uni.edu.pe.backendv3ladefinitiva.model.ClienteRespuesta;
+import uni.edu.pe.backend.dao.ClienteDao;
+import uni.edu.pe.backend.model.Cliente;
+import uni.edu.pe.backend.model.ClienteRegister;
+import uni.edu.pe.backend.model.ClienteRespuesta;
 
 
 import java.util.List;
@@ -24,8 +24,8 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    public ClienteRespuesta registerByEmail(ClienteRegister clienteRegister) {
-        return dao.registerByEmail(clienteRegister);
+    public ClienteRespuesta registerByEmail(Cliente cliente) {
+        return dao.registerByEmail(cliente);
     }
 
     @Override

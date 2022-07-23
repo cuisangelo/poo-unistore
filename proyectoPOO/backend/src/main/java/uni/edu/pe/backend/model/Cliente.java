@@ -1,4 +1,4 @@
-package uni.edu.pe.backendv3ladefinitiva.model;
+package uni.edu.pe.backend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClienteRegister {
+public class Cliente {
     private String id_cliente;
     private String nombres;
     private String apellidos;
     private String direccion;
-    private String telefono;
+    private String telefono ;
     private String correo;
     private String contrasena;
 }

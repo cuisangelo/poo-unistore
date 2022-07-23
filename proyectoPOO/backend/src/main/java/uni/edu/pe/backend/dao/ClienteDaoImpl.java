@@ -1,11 +1,11 @@
-package uni.edu.pe.backendv3ladefinitiva.dao;
+package uni.edu.pe.backend.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
-import uni.edu.pe.backendv3ladefinitiva.model.ClienteRegister;
-import uni.edu.pe.backendv3ladefinitiva.model.ClienteRespuesta;
+import uni.edu.pe.backend.model.Cliente;
+import uni.edu.pe.backend.model.ClienteRegister;
+import uni.edu.pe.backend.model.ClienteRespuesta;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -85,18 +85,18 @@ public class ClienteDaoImpl implements ClienteDao {
     }
 
     @Override
-    public ClienteRespuesta registerByEmail(ClienteRegister clienteRegister) {
+    public ClienteRespuesta registerByEmail(Cliente cliente) {
         ClienteRespuesta clienteRespuesta = new ClienteRespuesta();
         getConnection();
         try {
             String sql = "INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, clienteRegister.getNombres());
-            ps.setString(2, clienteRegister.getApellidos());
-            ps.setString(3, clienteRegister.getDireccion());
-            ps.setString(4, clienteRegister.getTelefono());
-            ps.setString(5, clienteRegister.getCorreo());
-            ps.setString(6, clienteRegister.getContrasena());
+            ps.setString(1, cliente.getNombres());
+            ps.setString(2, cliente.getApellidos());
+            ps.setString(3, cliente.getDireccion());
+            ps.setString(4, cliente.getTelefono());
+            ps.setString(5, cliente.getCorreo());
+            ps.setString(6, cliente.getContrasena());
             ResultSet rs = ps.executeQuery();
             clienteRespuesta.setResponse("ok");
             rs.close();
