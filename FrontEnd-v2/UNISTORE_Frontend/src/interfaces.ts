@@ -1,11 +1,15 @@
-export interface Usuario {
-  usuario: string;
+export interface UsuarioRegister {
+  nombres: string;
+  apellidos: string;
+  direccion: string;
+  telefono: string;
+  correo: string;
   contrasena: string;
 }
 
 export interface UsuarioRespuesta {
   status: string;
-  response: string;
+  response: any;
 }
 export interface Producto{
   id_producto:string;

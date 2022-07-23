@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from "../../ApiService";
-import {Cliente} from "../../interfaces";
+import { ApiService } from "../../ApiService";
+import { UsuarioRespuesta } from "../../interfaces";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -9,41 +11,36 @@ import {Cliente} from "../../interfaces";
 })
 export class RegisterComponent implements OnInit {
 
-  id_cliente: string="";
-  nombres: string ="";
-  apellidos: string ="";
-  direccion: string ="";
-  telefono: string ="";
-  correo: string ="";
-  contrasena: string ="";
+  registerForm = new FormGroup({
+    id_cliente: new FormControl('', Validators.required),
+    nombres: new FormControl('', Validators.required),
+    apellidos: new FormControl('', Validators.required),
+    direccion: new FormControl('', Validators.required),
+    telefono: new FormControl('', Validators.required),
+    correo: new FormControl('', Validators.required),
+    contrasena: new FormControl('', Validators.required),
+  })
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private router: Router) { }
+
+  errorStatus: boolean = false;
+  errorMsg: any = "";
 
   ngOnInit(): void {
   }
 
-  registrar() {
-    console.log(this.id_cliente);
-    console.log(this.nombres);
-    console.log(this.apellidos);
-    console.log(this.direccion);
-    console.log(this.telefono);
-    console.log(this.correo);
-    console.log(this.contrasena);
-
-    const cliente:Cliente ={
-      id_cliente: this.id_cliente,
-      nombres: this.nombres,
-      apellidos: this.apellidos,
-      direccion: this.direccion,
-      telefono: this.telefono,
-      correo: this.correo,
-      contrasena: this.contrasena,
-    }
-
-    this.api.agregarCliente(cliente).subscribe(data =>{
-      console.log("dentro de api.agregarCliente ====>")
-      console.log(data.nombres);
+  registerByEmail(form: any) {
+    this.api.registerByEmail(form).subscribe(data =>{
+      let dataResponse: UsuarioRespuesta = data;
+      if(dataResponse.status == "ok") {
+        localStorage.setItem("token", dataResponse.response.token)
+        this.router.navigate(['tienda']);
+      }
+      else {
+        this.errorStatus = true;
+        this.errorMsg = dataResponse.response.errorMsg;
+      }
     })
   }
+
 }
