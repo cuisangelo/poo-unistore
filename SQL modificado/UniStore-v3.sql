@@ -120,5 +120,4 @@ SELECT cc.correo, cc.contrasena FROM correo_contrasena cc;
 SELECT al.id_alumno, cl.id_cliente, cl.nombres, cl.apellidos, direccion , telefono ,correo cc.correo, cc.contrasena FROM alumno al
 INNER JOIN cliente cl ON (al.id_cliente = cl.id_cliente);
 
-INSERT INTO cliente VALUES (?, ?, ?, ?, ?);
-INSERT INTO cuenta VALUES (?, ?, ?);
+SELECT cu.correo, cu.contrasena FROM cuenta cu;
