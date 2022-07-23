@@ -12,7 +12,6 @@ import { Router } from "@angular/router";
 export class RegisterComponent implements OnInit {
 
   registerForm = new FormGroup({
-    id_cliente: new FormControl('', Validators.required),
     nombres: new FormControl('', Validators.required),
     apellidos: new FormControl('', Validators.required),
     direccion: new FormControl('', Validators.required),
