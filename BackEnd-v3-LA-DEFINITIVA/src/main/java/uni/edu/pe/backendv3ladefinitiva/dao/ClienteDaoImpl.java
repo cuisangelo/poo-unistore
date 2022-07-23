@@ -3,10 +3,9 @@ package uni.edu.pe.backendv3ladefinitiva.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
-import uni.edu.pe.backendv3ladefinitiva.model.UsuarioCuenta;
-import uni.edu.pe.backendv3ladefinitiva.model.UsuarioRegister;
+import uni.edu.pe.backendv3ladefinitiva.model.ClienteRegister;
+import uni.edu.pe.backendv3ladefinitiva.model.ClienteRespuesta;
 
 import java.sql.*;
 import java.util.List;
@@ -93,36 +92,52 @@ public class ClienteDaoImpl implements ClienteDao {
     }
 
     @Override
-    public String registerByEmail(UsuarioRegister usuarioRegister) {
-        boolean flagRegistered = false;
+    public ClienteRespuesta registerByEmail(ClienteRegister clienteRegister) {
+        ClienteRespuesta clienteRespuesta = new ClienteRespuesta();
         getConnection();
         try {
-            String sql1 = "INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?, ?, ?);";
-            String sql2 = "INSERT INTO cuenta VALUES (?, ?, NEXTVAL(id_cliente));";
-            PreparedStatement ps1 = connection.prepareStatement(sql1);
-            PreparedStatement ps2 = connection.prepareStatement(sql2);
-            //ps1.setString(1, usuarioRegister.getId_cliente());
-            ps1.setString(1, usuarioRegister.getNombres());
-            ps1.setString(2, usuarioRegister.getApellidos());
-            ps1.setString(3, usuarioRegister.getDireccion());
-            ps1.setString(4, usuarioRegister.getTelefono());
-            ps2.setString(1, usuarioRegister.getCorreo());
-            ps2.setString(2, usuarioRegister.getContrasena());
-            //ps2.setString(3, usuarioRegister.getId_cliente());
-            ResultSet rs1 = ps1.executeQuery();
-            ResultSet rs2 = ps2.executeQuery();
-            flagRegistered = true;
-            rs1.close();
-            rs2.close();
-            ps1.close();
-            ps2.close();
+            String sql = "INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?, ?, ?, ?, ?);";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, clienteRegister.getNombres());
+            ps.setString(2, clienteRegister.getApellidos());
+            ps.setString(3, clienteRegister.getDireccion());
+            ps.setString(4, clienteRegister.getTelefono());
+            ps.setString(5, clienteRegister.getCorreo());
+            ps.setString(6, clienteRegister.getContrasena());
+            ResultSet rs = ps.executeQuery();
+            clienteRespuesta.setResponse("ok");
+            rs.close();
+            ps.close();
             closeConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        if(flagRegistered){
-            return "TRUE";
+        return clienteRespuesta;
+    }
+
+    @Override
+    public ClienteRespuesta loginByEmail(ClienteRegister clienteRegister) {
+        ClienteRespuesta clienteRespuesta = new ClienteRespuesta();
+        String correo = null, contrasena = null;
+        getConnection();
+        try {
+            String sql = "SELECT cl.correo, cl.contrasena FROM cliente cl WHERE cl.correo = ? AND cl.contrasena = ?;";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, clienteRegister.getCorreo());
+            ps.setString(2, clienteRegister.getContrasena());
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                correo = rs.getString("correo");
+                contrasena = rs.getString("contrasena");
+            }
+            rs.close();
+            ps.close();
+            closeConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        else return "FALSE";
+        if(correo != null && contrasena != null) clienteRespuesta.setResponse("ok");
+        else clienteRespuesta.setResponse("not ok");
+        return clienteRespuesta;
     }
 }

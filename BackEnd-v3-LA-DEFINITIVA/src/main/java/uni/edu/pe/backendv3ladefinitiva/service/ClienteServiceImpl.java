@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uni.edu.pe.backendv3ladefinitiva.dao.ClienteDao;
 import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
-import uni.edu.pe.backendv3ladefinitiva.model.UsuarioRegister;
+import uni.edu.pe.backendv3ladefinitiva.model.ClienteRegister;
+import uni.edu.pe.backendv3ladefinitiva.model.ClienteRespuesta;
 
 
 import java.util.List;
@@ -17,14 +18,18 @@ public class ClienteServiceImpl implements ClienteService{
         return dao.obtenerCliente();
     }
 
-
-    @Override
-    public String registerByEmail(UsuarioRegister usuarioRegister) {
-        return dao.registerByEmail(usuarioRegister);
-    }
-
     @Override
     public Cliente obtenerClientePerfil(Cliente cliente) {
         return dao.obtenerClientePerfil(cliente);
+    }
+
+    @Override
+    public ClienteRespuesta registerByEmail(ClienteRegister clienteRegister) {
+        return dao.registerByEmail(clienteRegister);
+    }
+
+    @Override
+    public ClienteRespuesta loginByEmail(ClienteRegister clienteRegister) {
+        return dao.loginByEmail(clienteRegister);
     }
 }
