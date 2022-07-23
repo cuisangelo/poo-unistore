@@ -1,13 +1,12 @@
 package uni.edu.pe.backendv2.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.relational.core.sql.SQL;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import uni.edu.pe.backendv2.model.Cliente;
-import uni.edu.pe.backendv2.model.UsuarioCuenta;
-import uni.edu.pe.backendv2.model.UsuarioRegister;
-import uni.edu.pe.backendv2.model.UsuarioRespuesta;
+import uni.edu.pe.backendv2.model.ClienteRegister;
+import uni.edu.pe.backendv2.model.ClienteRespuesta;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -61,6 +60,11 @@ public class ClienteDaoImpl implements ClienteDao {
         return null;
     }
 
+    @Override
+    public Cliente agregarCliente(Cliente cliente) {
+        return null;
+    }
+
     private Cliente extraerCliente(ResultSet resultado) throws SQLException {
         Cliente cliente = new Cliente(
                 resultado.getString("id_cliente"),
@@ -95,54 +99,63 @@ public class ClienteDaoImpl implements ClienteDao {
     }
 
     @Override
-    public UsuarioRespuesta registerByEmail(UsuarioRegister usuarioRegister) {
-        UsuarioRespuesta usuarioRespuesta = new UsuarioRespuesta();
-        boolean flagRegistered = false;
+    public ClienteRespuesta loginByEmail(ClienteRegister clienteRegister) {
+        ClienteRespuesta clienteRespuesta = new ClienteRespuesta();
+        String correo = null, contrasena = null;
         getConnection();
         try {
-            String sql1 = "INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?, ?, ?);";
-            PreparedStatement ps1 = connection.prepareStatement(sql1);
-            ps1.setString(1, usuarioRegister.getNombres());
-            ps1.setString(2, usuarioRegister.getApellidos());
-            ps1.setString(3, usuarioRegister.getDireccion());
-            ps1.setString(4, usuarioRegister.getTelefono());
-            ResultSet rs1 = ps1.executeQuery();
-            rs1.close();
-            ps1.close();
-
-            usuarioRespuesta.setResponse("ok");
-
-            /*String sql2 = "INSERT INTO cuenta VALUES (?, ?, NEXTVAL(id_cliente));";
-            PreparedStatement ps2 = connection.prepareStatement(sql2);
-            ps2.setString(1, usuarioRegister.getCorreo());
-            ps2.setString(2, usuarioRegister.getContrasena());
-
-
-            ResultSet rs2 = ps2.executeQuery();
-            flagRegistered = true;
-
-            rs2.close();
-
-            ps2.close();*/
+            String sql = "SELECT cl.correo, cl.contrasena FROM cliente cl WHERE cl.correo = ? AND cl.contrasena = ?;";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, clienteRegister.getCorreo());
+            ps.setString(2, clienteRegister.getContrasena());
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                correo = rs.getString("correo");
+                contrasena = rs.getString("contrasena");
+            }
+            rs.close();
+            ps.close();
             closeConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        /*if(flagRegistered){
-            return "ok";
-        }
-        else return "not ok";*/
-        return usuarioRespuesta;
+        if(correo != null && contrasena != null) clienteRespuesta.setResponse("ok");
+        else clienteRespuesta.setResponse("not ok");
+        return clienteRespuesta;
     }
 
     @Override
-    public List<String> getUserData(UsuarioRegister usuarioRegister) {
+    public ClienteRespuesta registerByEmail(ClienteRegister clienteRegister) {
+        ClienteRespuesta clienteRespuesta = new ClienteRespuesta();
+        getConnection();
+        try {
+            String sql = "INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?, ?, ?, ?, ?);";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, clienteRegister.getNombres());
+            ps.setString(2, clienteRegister.getApellidos());
+            ps.setString(3, clienteRegister.getDireccion());
+            ps.setString(4, clienteRegister.getTelefono());
+            ps.setString(5, clienteRegister.getCorreo());
+            ps.setString(6, clienteRegister.getContrasena());
+            ResultSet rs = ps.executeQuery();
+            clienteRespuesta.setResponse("ok");
+            rs.close();
+            ps.close();
+            closeConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return clienteRespuesta;
+    }
+
+    @Override
+    public List<String> getUserData(ClienteRegister clienteRegister) {
         List<String> data = new ArrayList<>();
         getConnection();
         try {
             String sql = "SELECT * FROM cliente cl WHERE cl.id_cliente = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, usuarioRegister.getId_cliente());
+            ps.setString(1, clienteRegister.getId_cliente());
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 data.add(rs.getString("nombres"));

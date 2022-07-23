@@ -30,14 +30,28 @@ export class RegisterComponent implements OnInit {
 
   registerByEmail(form: any) {
     this.api.registerByEmail(form).subscribe(data =>{
-      let dataResponse: UsuarioRespuesta = data;
-      if(dataResponse.status == "ok") {
-        localStorage.setItem("token", dataResponse.response.token)
+      let usuarioRespuesta: UsuarioRespuesta = data;
+      if(usuarioRespuesta.status == "ok") {
+        localStorage.setItem("token", usuarioRespuesta.response.token)
         this.router.navigate(['tienda']);
       }
       else {
         this.errorStatus = true;
-        this.errorMsg = dataResponse.response.errorMsg;
+        this.errorMsg = usuarioRespuesta.response.errorMsg;
+      }
+    })
+  }
+
+  loginByEmail(form: any) {
+    this.api.loginByEmail(form).subscribe(data =>{
+      let usuarioRespuesta: UsuarioRespuesta = data;
+      if(usuarioRespuesta.status == "ok") {
+        localStorage.setItem("token", usuarioRespuesta.response.token)
+        this.router.navigate(['perfil']);
+      }
+      else {
+        this.errorStatus = true;
+        this.errorMsg = usuarioRespuesta.response.errorMsg;
       }
     })
   }

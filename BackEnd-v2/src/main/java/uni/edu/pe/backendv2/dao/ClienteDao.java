@@ -1,24 +1,21 @@
 package uni.edu.pe.backendv2.dao;
 
 import uni.edu.pe.backendv2.model.Cliente;
-import uni.edu.pe.backendv2.model.UsuarioRegister;
-import uni.edu.pe.backendv2.model.UsuarioRespuesta;
+import uni.edu.pe.backendv2.model.ClienteRegister;
+import uni.edu.pe.backendv2.model.ClienteRespuesta;
 
 import java.util.List;
 
 public interface ClienteDao {
-
     List<Cliente> obtenerCliente();
 
-<<<<<<< HEAD
     Cliente agregarCliente(Cliente cliente);
 
-    UsuarioRespuesta registerByEmail(UsuarioRegister usuarioRegister);
+    ClienteRespuesta registerByEmail(ClienteRegister clienteRegister);
 
-    List<String> getUserData(UsuarioRegister usuarioRegister);
-=======
-    String registerByEmail(UsuarioRegister usuarioRegister);
+    List<String> getUserData(ClienteRegister clienteRegister);
 
     Cliente obtenerClientePerfil(Cliente cliente);
->>>>>>> aec717f7d6c97c4f9dd5df2c5dd570a068a62885
+
+    ClienteRespuesta loginByEmail(ClienteRegister clienteRegister);
 }

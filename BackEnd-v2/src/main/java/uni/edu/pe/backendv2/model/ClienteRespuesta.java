@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsuarioCuenta {
-    private String correo;
-    private String contrasena;
-
+public class ClienteRespuesta {
+    private String status;
+    private String response;
 }

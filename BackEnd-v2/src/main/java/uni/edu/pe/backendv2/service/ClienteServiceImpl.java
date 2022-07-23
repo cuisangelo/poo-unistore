@@ -4,9 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uni.edu.pe.backendv2.dao.ClienteDao;
 import uni.edu.pe.backendv2.model.Cliente;
-import uni.edu.pe.backendv2.model.UsuarioCuenta;
-import uni.edu.pe.backendv2.model.UsuarioRegister;
-import uni.edu.pe.backendv2.model.UsuarioRespuesta;
+import uni.edu.pe.backendv2.model.ClienteRegister;
+import uni.edu.pe.backendv2.model.ClienteRespuesta;
 
 import java.util.List;
 @Service
@@ -18,19 +17,27 @@ public class ClienteServiceImpl implements ClienteService{
         return dao.obtenerCliente();
     }
 
-
     @Override
-    public UsuarioRespuesta registerByEmail(UsuarioRegister usuarioRegister) {
-        return dao.registerByEmail(usuarioRegister);
+    public List<String> getUserData(ClienteRegister clienteRegister) {
+        return dao.getUserData(clienteRegister);
     }
 
     @Override
-<<<<<<< HEAD
-    public List<String> getUserData(UsuarioRegister usuarioRegister) {
-        return dao.getUserData(usuarioRegister);
-=======
     public Cliente obtenerClientePerfil(Cliente cliente) {
-        return dao.obtenerClientePerfil(cliente);
->>>>>>> aec717f7d6c97c4f9dd5df2c5dd570a068a62885
+        return null;
     }
+
+    @Override
+    public ClienteRespuesta loginByEmail(ClienteRegister clienteRegister) {
+        return dao.loginByEmail(clienteRegister);
+    }
+
+    @Override
+    public ClienteRespuesta registerByEmail(ClienteRegister clienteRegister) {
+        return dao.registerByEmail(clienteRegister);
+    }
+
+    /*public Cliente obtenerClientePerfil(Cliente cliente) {
+        return dao.obtenerClientePerfil(cliente);
+    }*/
 }
