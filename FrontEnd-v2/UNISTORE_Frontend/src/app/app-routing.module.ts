@@ -9,8 +9,8 @@ import {PerfilComponent} from "./perfil/perfil.component";
 
 const routes: Routes = [
   {path: "tienda", component: TiendaComponent},
-  {path:"register", component:RegisterComponent},
-  {path:"detalle/:id", component:DetalleComponent},
+  {path: "register", component: RegisterComponent},
+  {path: "detalle/:id", component: DetalleComponent},
   {path: "login", component: LoginComponent},
   {path: "perfil", component: PerfilComponent}
 ];
