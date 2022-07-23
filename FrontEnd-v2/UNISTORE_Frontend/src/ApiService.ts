@@ -1,7 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Cliente, RespuestaProducto, UsuarioRegister, UsuarioRespuesta} from "./interfaces";
+
 import {catchError, Observable, retry, throwError} from "rxjs";
+import {Cliente, RespuestaCliente, RespuestaProducto, UsuarioRegister, UsuarioRespuesta} from "./interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ApiService {
 
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json;charset=utf-8'})};
 
-  errorHandl(error:any) {
+  errorHandl(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
@@ -32,6 +33,14 @@ export class ApiService {
       );
   }
 
+  ObtenerClientePerfil(): Observable<RespuestaCliente> {
+    return this.http.post<RespuestaCliente>('http://localhost:8080/obtener-cliente-perfil', null, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
   agregarCliente(data: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>('http://localhost:8080/agregar-cliente', data, this.httpOptions)
       .pipe(
@@ -47,6 +56,7 @@ export class ApiService {
         catchError(this.errorHandl)
       );
   }
+<<<<<<< HEAD
 
   loginByEmail(form: UsuarioRegister): Observable<string> {
     return this.http.post<string>('http://localhost:8080/loginByEmail', form, this.httpOptions)
@@ -64,4 +74,6 @@ export class ApiService {
       );
   }
 
+=======
+>>>>>>> aec717f7d6c97c4f9dd5df2c5dd570a068a62885
 }

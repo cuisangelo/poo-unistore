@@ -1,10 +1,18 @@
 <div class="flex flex-row space-x-4 pt-4 pb-4 bg-[#8e2929]">
   <div class="pl-5"><img src="favicon.ico"></div>
+<<<<<<< HEAD
+  <div class=" basis-1/8"><a href="javascript: history.go(-1)" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">UNI Store</p></a></div>
+  <div class=" basis-1/2 grow"><p  class="text-center uppercase font-bold text-white font-['Verdana']"></p></div>
+  <div class=" basis-1/8"><a href="javascript: history.go(-1)" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Inicio</p></a></div>
+  <div class=" basis-1/8"><a href="javascript: history.go(-1)" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Tienda</p></a></div>
+  <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Perfil</p></a></div>
+=======
   <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">UNI Store</p></a></div>
   <div class=" basis-1/2 grow"><p class="text-center"></p></div>
   <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">Inicio</p></a></div>
   <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">Tienda</p></a></div>
   <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">Perfil</p></a></div>
+>>>>>>> 5832c29644617533d17351e9eddd71b9dceea0ed
 </div>
 
 <div >
@@ -64,8 +72,8 @@
               <div><p class="text-xs">{{item.descripcion}}</p></div>
             </div>
             <div class="grid grid-cols-2 gap-1">
-              <div class="text-center line-through font-semibold">{{item.precio_oferta}}</div>
-              <div class="text-center ">{{item.precio_unitario}}</div>
+              <div class="text-center line-through font-semibold">{{item.precio_unitario}}</div>
+              <div class="text-center ">{{item.precio_oferta}}</div>
             </div>
             <div>
               <div class=" rounded-lg bg-[#1B8F7D] hover:bg-[#ba3d3b] " ><a class="btn" ><p class="text-sm  text-center" [routerLink]="['/detalle-detalle/',indice]">Más Detalle</p></a></div>

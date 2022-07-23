@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Cliente, Producto} from "../../interfaces";
+import {ApiService} from "../../ApiService";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  cliente?: Cliente = undefined;
+  listaCliente: Cliente[] = []
+  indice: number = -1;
 
-  ngOnInit(): void {
+  constructor(private api: ApiService, private activatedRoute: ActivatedRoute) {
   }
 
+  ngOnInit(): void {
+    this.indice = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    console.log(this.indice);
+
+    this.api.ObtenerClientePerfil().subscribe(data => {
+      this.listaCliente = data.listaCliente;
+      this.cliente = this.listaCliente[this.indice];
+    })
+  }
+
+  ObtenerClientePerfil(): void {
+    this.cliente = this.listaCliente[this.indice];
+  }
 }

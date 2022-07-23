@@ -10,10 +10,15 @@ import java.util.List;
 
 public interface ClienteService {
     List<Cliente> obtenerCliente();
+    
 
-    Cliente agregarCliente(Cliente cliente);
-
+<<<<<<< HEAD
     UsuarioRespuesta registerByEmail(UsuarioRegister usuarioRegister);
 
     List<String> getUserData(UsuarioRegister usuarioRegister);
+=======
+    String registerByEmail(UsuarioRegister usuarioRegister);
+
+    Cliente obtenerClientePerfil(Cliente cliente);
+>>>>>>> aec717f7d6c97c4f9dd5df2c5dd570a068a62885
 }

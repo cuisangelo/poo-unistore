@@ -1,3 +1,4 @@
+
 export interface UsuarioRegister {
   nombres: string;
   apellidos: string;
@@ -31,4 +32,7 @@ export interface Cliente{
   telefono: string;
   correo:string;
   contrasena:string;
+}
+export interface RespuestaCliente{
+  listaCliente: Cliente[];
 }

@@ -18,10 +18,6 @@ public class ClienteServiceImpl implements ClienteService{
         return dao.obtenerCliente();
     }
 
-    @Override
-    public Cliente agregarCliente(Cliente cliente) {
-        return dao.agregarCliente(cliente);
-    }
 
     @Override
     public UsuarioRespuesta registerByEmail(UsuarioRegister usuarioRegister) {
@@ -29,7 +25,12 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
+<<<<<<< HEAD
     public List<String> getUserData(UsuarioRegister usuarioRegister) {
         return dao.getUserData(usuarioRegister);
+=======
+    public Cliente obtenerClientePerfil(Cliente cliente) {
+        return dao.obtenerClientePerfil(cliente);
+>>>>>>> aec717f7d6c97c4f9dd5df2c5dd570a068a62885
     }
 }
