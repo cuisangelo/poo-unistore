@@ -46,8 +46,8 @@ public class ClienteController {
         return service.loginByEmail(clienteRegister);
     }
 
-    @RequestMapping(value = "/getUserData", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
-    public List<String> getUserData(@RequestBody ClienteRegister clienteRegister) {
-        return service.getUserData(clienteRegister);
+    @RequestMapping(value = "/getUserId", method = RequestMethod.POST)
+    public int getUserId(@RequestBody ClienteRegister clienteRegister) {
+        return service.getUserId(clienteRegister);
     }
 }

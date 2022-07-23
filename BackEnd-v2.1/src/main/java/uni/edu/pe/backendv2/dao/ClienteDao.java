@@ -11,11 +11,13 @@ public interface ClienteDao {
 
     Cliente agregarCliente(Cliente cliente);
 
-    ClienteRespuesta registerByEmail(ClienteRegister clienteRegister);
-
     List<String> getUserData(ClienteRegister clienteRegister);
 
     Cliente obtenerClientePerfil(Cliente cliente);
 
+    ClienteRespuesta registerByEmail(ClienteRegister clienteRegister);
+
     ClienteRespuesta loginByEmail(ClienteRegister clienteRegister);
+
+    int getUserId(ClienteRegister clienteRegister);
 }

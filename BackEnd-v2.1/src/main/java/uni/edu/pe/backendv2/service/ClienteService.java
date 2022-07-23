@@ -10,11 +10,11 @@ import java.util.List;
 public interface ClienteService {
     List<Cliente> obtenerCliente();
 
-    ClienteRespuesta registerByEmail(ClienteRegister clienteRegister);
-
-    List<String> getUserData(ClienteRegister clienteRegister);
-
     Cliente obtenerClientePerfil(Cliente cliente);
 
+    ClienteRespuesta registerByEmail(ClienteRegister clienteRegister);
+
     ClienteRespuesta loginByEmail(ClienteRegister clienteRegister);
+
+    int getUserId(ClienteRegister clienteRegister);
 }

@@ -15,4 +15,6 @@ public interface ClienteDao {
     ClienteRespuesta registerByEmail(ClienteRegister clienteRegister);
 
     ClienteRespuesta loginByEmail(ClienteRegister clienteRegister);
+
+    int getUserId(ClienteRegister clienteRegister);
 }

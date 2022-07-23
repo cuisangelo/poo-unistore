@@ -43,4 +43,9 @@ public class ClienteController {
     public ClienteRespuesta loginByEmail(@RequestBody ClienteRegister clienteRegister) {
         return service.loginByEmail(clienteRegister);
     }
+
+    @RequestMapping(value = "/getUserId", method = RequestMethod.POST)
+    public int getUserId(@RequestBody ClienteRegister clienteRegister) {
+        return service.getUserId(clienteRegister);
+    }
 }

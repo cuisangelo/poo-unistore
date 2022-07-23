@@ -37,6 +37,11 @@ public class ClienteServiceImpl implements ClienteService{
         return dao.registerByEmail(clienteRegister);
     }
 
+    @Override
+    public int getUserId(ClienteRegister clienteRegister) {
+        return dao.getUserId(clienteRegister);
+    }
+
     /*public Cliente obtenerClientePerfil(Cliente cliente) {
         return dao.obtenerClientePerfil(cliente);
     }*/

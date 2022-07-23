@@ -1,6 +1,5 @@
 package uni.edu.pe.backendv3ladefinitiva.service;
 
-
 import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
 import uni.edu.pe.backendv3ladefinitiva.model.ClienteRegister;
 import uni.edu.pe.backendv3ladefinitiva.model.ClienteRespuesta;
@@ -15,4 +14,6 @@ public interface ClienteService {
     ClienteRespuesta registerByEmail(ClienteRegister clienteRegister);
 
     ClienteRespuesta loginByEmail(ClienteRegister clienteRegister);
+
+    int getUserId(ClienteRegister clienteRegister);
 }

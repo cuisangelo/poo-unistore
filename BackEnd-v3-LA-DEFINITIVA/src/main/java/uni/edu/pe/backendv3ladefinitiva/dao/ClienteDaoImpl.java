@@ -4,14 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
-<<<<<<< HEAD
 import uni.edu.pe.backendv3ladefinitiva.model.ClienteRegister;
 import uni.edu.pe.backendv3ladefinitiva.model.ClienteRespuesta;
-=======
-import uni.edu.pe.backendv3ladefinitiva.model.Producto;
-import uni.edu.pe.backendv3ladefinitiva.model.UsuarioCuenta;
-import uni.edu.pe.backendv3ladefinitiva.model.UsuarioRegister;
->>>>>>> b6976111d36d8eeb638d605da17817f797181fa8
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -159,5 +153,27 @@ public class ClienteDaoImpl implements ClienteDao {
         if(correo != null && contrasena != null) clienteRespuesta.setResponse("ok");
         else clienteRespuesta.setResponse("not ok");
         return clienteRespuesta;
+    }
+
+    @Override
+    public int getUserId(ClienteRegister clienteRegister) {
+        int id_cliente = 0;
+        getConnection();
+        try {
+            String sql = "SELECT cl.id_cliente FROM cliente cl WHERE cl.correo = ? AND cl.contrasena = ?;";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, clienteRegister.getCorreo());
+            ps.setString(2, clienteRegister.getContrasena());
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                id_cliente = rs.getInt("id_cliente");
+            }
+            rs.close();
+            ps.close();
+            closeConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id_cliente;
     }
 }

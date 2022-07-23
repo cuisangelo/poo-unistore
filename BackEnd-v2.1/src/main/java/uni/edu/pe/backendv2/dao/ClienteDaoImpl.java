@@ -148,7 +148,7 @@ public class ClienteDaoImpl implements ClienteDao {
     }
 
     @Override
-    public List<String> getUserData(ClienteRegister clienteRegister) {
+    public int getUserId(ClienteRegister clienteRegister) {
         List<String> data = new ArrayList<>();
         getConnection();
         try {
