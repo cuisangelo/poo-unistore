@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class ClienteCuenta {
     private String correo;
     private String contrasena;
-
 }

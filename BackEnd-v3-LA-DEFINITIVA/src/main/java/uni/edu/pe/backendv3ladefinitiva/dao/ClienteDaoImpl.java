@@ -16,27 +16,6 @@ public class ClienteDaoImpl implements ClienteDao {
     private JdbcTemplate jdbcTemplate;
     private Connection connection;
 
-    private Connection conexion;
-
-    private void obtenerConexion(){
-        try {
-            this.conexion = jdbcTemplate.getDataSource().getConnection();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-    private void cerrarConexion(ResultSet resultado,Statement sentencia){
-        try {
-            if(resultado != null) resultado.close();
-            if(sentencia != null) sentencia.close();
-            this.conexion.commit();
-            this.conexion.close();
-            this.conexion = null;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-
     private void getConnection() {
         try{
             connection = jdbcTemplate.getDataSource().getConnection();
@@ -59,15 +38,15 @@ public class ClienteDaoImpl implements ClienteDao {
         List<Cliente> lista = new ArrayList<>();
         String sql = " SELECT cl.id_cliente, cl.nombres, cl.apellidos, cl.direccion, cl.telefono, cl.correo, cl.contrasena FROM cliente cl;";
         try {
-            obtenerConexion();
-            Statement sentencia = conexion.createStatement();
+            getConnection();
+            Statement sentencia = connection.createStatement();
             ResultSet resultado = sentencia.executeQuery(sql);
             while (resultado.next()){
                 lista.add(extraerCliente(resultado));
             }
-            cerrarConexion(resultado,sentencia);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            closeConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return lista;
     }
@@ -87,20 +66,20 @@ public class ClienteDaoImpl implements ClienteDao {
 
     @Override
     public Cliente obtenerClientePerfil(Cliente cliente) {
-        String sql = " SELECT cl.id_cliente, cl.nombres, cl.apellidos, cl.direccion, cl.telefono, \n" +
-                "ct.correo, ct.contrasena FROM cliente cl\n" +
-                "INNER JOIN cuenta ct ON (cl.id_cliente = ct.id_cliente) where cl.id_cliente = ?;";
+        getConnection();
         try {
-            obtenerConexion();
-            PreparedStatement sentencia = conexion.prepareStatement(sql);
+            String sql = " SELECT cl.id_cliente, cl.nombres, cl.apellidos, cl.direccion, cl.telefono, \n" +
+                    "ct.correo, ct.contrasena FROM cliente cl\n" +
+                    "INNER JOIN cuenta ct ON (cl.id_cliente = ct.id_cliente) where cl.id_cliente = ?;";
+            PreparedStatement sentencia = connection.prepareStatement(sql);
             sentencia.setString(1, cliente.getId_cliente());
             ResultSet resultado = sentencia.executeQuery();
             while (resultado.next()){
                 cliente = extraerCliente(resultado);
             }
-            cerrarConexion(resultado,sentencia);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            closeConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return cliente;
     }
