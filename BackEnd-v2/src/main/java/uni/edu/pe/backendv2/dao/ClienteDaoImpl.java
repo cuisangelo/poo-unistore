@@ -97,18 +97,18 @@ public class ClienteDaoImpl implements ClienteDao {
         boolean flagRegistered = false;
         getConnection();
         try {
-            String sql1 = "INSERT INTO cliente VALUES (?, ?, ?, ?, ?);";
-            String sql2 = "INSERT INTO cuenta VALUES (?, ?, ?);";
+            String sql1 = "INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?, ?, ?);";
+            String sql2 = "INSERT INTO cuenta VALUES (?, ?, NEXTVAL(id_cliente));";
             PreparedStatement ps1 = connection.prepareStatement(sql1);
             PreparedStatement ps2 = connection.prepareStatement(sql2);
-            ps1.setString(1, usuarioRegister.getId_cliente());
-            ps1.setString(2, usuarioRegister.getNombres());
-            ps1.setString(3, usuarioRegister.getApellidos());
-            ps1.setString(4, usuarioRegister.getDireccion());
-            ps1.setString(5, usuarioRegister.getTelefono());
+            //ps1.setString(1, usuarioRegister.getId_cliente());
+            ps1.setString(1, usuarioRegister.getNombres());
+            ps1.setString(2, usuarioRegister.getApellidos());
+            ps1.setString(3, usuarioRegister.getDireccion());
+            ps1.setString(4, usuarioRegister.getTelefono());
             ps2.setString(1, usuarioRegister.getCorreo());
             ps2.setString(2, usuarioRegister.getContrasena());
-            ps2.setString(3, usuarioRegister.getId_cliente());
+            //ps2.setString(3, usuarioRegister.getId_cliente());
             ResultSet rs1 = ps1.executeQuery();
             ResultSet rs2 = ps2.executeQuery();
             flagRegistered = true;

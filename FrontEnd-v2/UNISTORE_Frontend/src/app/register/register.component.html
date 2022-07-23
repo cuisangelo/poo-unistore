@@ -2,17 +2,43 @@
 <head>
   <title>Registro</title>
 </head>
-<div class="flex flex-row space-x-4 pt-2 pb-2 bg-[#6a1b0f]">
+<div class="flex flex-row space-x-4 pt-4 pb-4 bg-[#8e2929]">
   <div class="pl-5"><img src="favicon.ico"></div>
-  <div class=" basis-1/8"><a href="#" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">UNI Store</p></a></div>
-  <div class=" basis-1/2 grow"><p  class="text-center uppercase font-bold text-white font-['Verdana']">UniStore</p></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Inicio</p></a></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Tienda</p></a></div>
-  <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Perfil</p></a></div>
+  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">UNI Store</p></a></div>
+  <div class=" basis-1/2 grow"><p class="text-center"></p></div>
+  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">Inicio</p></a></div>
+  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">Tienda</p></a></div>
+  <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-white-400 hover:text-sky-400 text-xl text-center uppercase font-bold text-white">Perfil</p></a></div>
 </div>
-<div class="container-full bg-[url('assets/imagenes/asdf.jpg')]">
+<div class=" bg-auto bg-no-repeat ">
   <div class="w-fit mx-auto border-2 bg-white grid grid-cols-2 ">
-      <div class="border-2">
+
+    <form [formGroup]="registerForm" (ngSubmit)="registerByEmail(registerForm.value)">
+    <div>
+      <input type="text" id="nombres" placeholder="nombres" formControlName="nombres">
+    </div>
+    <div>
+      <input type="text" id="apellidos" placeholder="apellidos" formControlName="apellidos">
+    </div>
+    <div>
+      <input type="text" id="direccion" placeholder="direccion" formControlName="direccion">
+    </div>
+    <div>
+      <input type="text" id="telefono" placeholder="telefono" formControlName="telefono">
+    </div>
+    <div>
+      <input type="email" id="correo" placeholder="correo" formControlName="correo">
+    </div>
+    <div>
+      <input type="password" id="contrasena" placeholder="contrasena" formControlName="contrasena">
+    </div>
+    <input type="submit" value="Log In">
+    </form>
+    <div *ngIf="errorStatus">
+      <p>{{errorMsg}}</p>
+    </div>
+  </div>
+      <!--<div class="border-2">
         <h1 class="font-semibol">1. PASO</h1>
         <h2 class="font-semibol">Registrate</h2>
         <div class="border-2 grid grid-cols-2">
@@ -65,13 +91,9 @@
         <div>
           <button class="bg-blue-400 hover:bg-sky-700 text-white w-full rounded-md" ><a href="login">¿Ya estas registrado? Logeate</a></button>
         </div>
-      </div>
+      </div>-->
 
     <div>
-      <img src="assets/imagenes/gatorayo.jpg">
+      <img class="h-10" src="assets/imagenes/uni.jpg">
     </div>
-    <div>
-    </div>
-
-    </div>
-<</div>
+</div>
