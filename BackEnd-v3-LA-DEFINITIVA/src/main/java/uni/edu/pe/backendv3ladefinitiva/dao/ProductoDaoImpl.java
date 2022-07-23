@@ -3,7 +3,7 @@ package uni.edu.pe.backendv3ladefinitiva.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import uni.edu.pe.backendv2.model.Producto;
+import uni.edu.pe.backendv3ladefinitiva.model.Producto;
 
 import java.sql.*;
 import java.util.ArrayList;

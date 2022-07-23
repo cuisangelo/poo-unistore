@@ -1,9 +1,11 @@
 package uni.edu.pe.backendv3ladefinitiva.service;
 
 
-import uni.edu.pe.backendv2.model.Cliente;
-import uni.edu.pe.backendv2.model.UsuarioCuenta;
-import uni.edu.pe.backendv2.model.UsuarioRegister;
+import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
+import uni.edu.pe.backendv3ladefinitiva.model.UsuarioCuenta;
+import uni.edu.pe.backendv3ladefinitiva.model.UsuarioRegister;
+import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
+import uni.edu.pe.backendv3ladefinitiva.model.UsuarioRegister;
 
 import java.util.List;
 

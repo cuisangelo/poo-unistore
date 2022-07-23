@@ -56,7 +56,6 @@ export class ApiService {
         catchError(this.errorHandl)
       );
   }
-<<<<<<< HEAD
 
   loginByEmail(form: UsuarioRegister): Observable<string> {
     return this.http.post<string>('http://localhost:8080/loginByEmail', form, this.httpOptions)
@@ -74,6 +73,4 @@ export class ApiService {
       );
   }
 
-=======
->>>>>>> aec717f7d6c97c4f9dd5df2c5dd570a068a62885
 }

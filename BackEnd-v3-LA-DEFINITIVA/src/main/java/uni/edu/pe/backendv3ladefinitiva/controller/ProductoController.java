@@ -2,9 +2,9 @@ package uni.edu.pe.backendv3ladefinitiva.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import uni.edu.pe.backendv2.model.Producto;
-import uni.edu.pe.backendv2.model.RespuestaProducto;
-import uni.edu.pe.backendv2.service.ProductoService;
+import uni.edu.pe.backendv3ladefinitiva.model.Producto;
+import uni.edu.pe.backendv3ladefinitiva.model.RespuestaProducto;
+import uni.edu.pe.backendv3ladefinitiva.service.ProductoService;
 
 @RestController
 @CrossOrigin(origins = "*")

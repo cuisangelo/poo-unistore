@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import uni.edu.pe.backendv2.model.Cliente;
-import uni.edu.pe.backendv2.model.UsuarioCuenta;
-import uni.edu.pe.backendv2.model.UsuarioRegister;
+import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
+import uni.edu.pe.backendv3ladefinitiva.model.UsuarioCuenta;
+import uni.edu.pe.backendv3ladefinitiva.model.UsuarioRegister;
 
 import java.sql.*;
 import java.util.List;
