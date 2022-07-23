@@ -9,8 +9,9 @@ import java.util.List;
 
 public interface ClienteService {
     List<Cliente> obtenerCliente();
-
-    Cliente agregarCliente(Cliente cliente);
+    
 
     String registerByEmail(UsuarioRegister usuarioRegister);
+
+    Cliente obtenerClientePerfil(Cliente cliente);
 }

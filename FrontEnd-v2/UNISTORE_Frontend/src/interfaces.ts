@@ -1,12 +1,3 @@
-export interface Usuario {
-  usuario: string;
-  contrasena: string;
-}
-
-export interface UsuarioRespuesta {
-  status: string;
-  response: string;
-}
 export interface Producto{
   id_producto:string;
   nombre:string;
@@ -27,4 +18,7 @@ export interface Cliente{
   telefono: string;
   correo:string;
   contrasena:string;
+}
+export interface RespuestaCliente{
+  listaCliente: Cliente[];
 }

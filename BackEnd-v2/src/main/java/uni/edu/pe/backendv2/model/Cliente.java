@@ -13,4 +13,6 @@ public class Cliente {
     private String apellidos;
     private String  direccion;
     private String telefono ;
+    private String correo;
+    private String contrasena;
 }

@@ -3,6 +3,7 @@ package uni.edu.pe.backendv2.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import uni.edu.pe.backendv2.model.Cliente;
 import uni.edu.pe.backendv2.model.UsuarioCuenta;
 import uni.edu.pe.backendv2.model.UsuarioRegister;
@@ -14,6 +15,27 @@ public class ClienteDaoImpl implements ClienteDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     private Connection connection;
+
+    private Connection conexion;
+
+    private void obtenerConexion(){
+        try {
+            this.conexion = jdbcTemplate.getDataSource().getConnection();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+    private void cerrarConexion(ResultSet resultado,Statement sentencia){
+        try {
+            if(resultado != null) resultado.close();
+            if(sentencia != null) sentencia.close();
+            this.conexion.commit();
+            this.conexion.close();
+            this.conexion = null;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 
     private void getConnection() {
         try{
@@ -37,19 +59,33 @@ public class ClienteDaoImpl implements ClienteDao {
         return null;
     }
 
+    private Cliente extraerCliente(ResultSet resultado) throws SQLException {
+        Cliente cliente = new Cliente(
+                resultado.getString("id_cliente"),
+                resultado.getString("nombres"),
+                resultado.getString("apellidos"),
+                resultado.getString("direccion"),
+                resultado.getString("telefono"),
+                resultado.getString("correo"),
+                resultado.getString("contrasena")
+        );
+        return cliente;
+    }
+
     @Override
-    public Cliente agregarCliente(Cliente cliente) {
-        getConnection();
+    public Cliente obtenerClientePerfil(Cliente cliente) {
+        String sql = " SELECT cl.id_cliente, cl.nombres, cl.apellidos, cl.direccion, cl.telefono, \n" +
+                "ct.correo, ct.contrasena FROM cliente cl\n" +
+                "INNER JOIN cuenta ct ON (cl.id_cliente = ct.id_cliente) where cl.id_cliente = ?;";
         try {
-            String sql = " INSERT INTO cliente VALUES (NEXTVAL(id_cliente), ?, ?,?, ?,?,?);";
-            PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, cliente.getId_cliente());
-            ps.setString(2, cliente.getNombres());
-            ps.setString(3, cliente.getApellidos());
-            ps.setString(4, cliente.getDireccion());
-            ps.setString(5, cliente.getApellidos());
-            ps.executeUpdate();
-            closeConnection();
+            obtenerConexion();
+            PreparedStatement sentencia = conexion.prepareStatement(sql);
+            sentencia.setString(1, cliente.getId_cliente());
+            ResultSet resultado = sentencia.executeQuery();
+            while (resultado.next()){
+                cliente = extraerCliente(resultado);
+            }
+            cerrarConexion(resultado,sentencia);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

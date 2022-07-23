@@ -17,13 +17,14 @@ public class ClienteServiceImpl implements ClienteService{
         return dao.obtenerCliente();
     }
 
-    @Override
-    public Cliente agregarCliente(Cliente cliente) {
-        return dao.agregarCliente(cliente);
-    }
 
     @Override
     public String registerByEmail(UsuarioRegister usuarioRegister) {
         return dao.registerByEmail(usuarioRegister);
+    }
+
+    @Override
+    public Cliente obtenerClientePerfil(Cliente cliente) {
+        return dao.obtenerClientePerfil(cliente);
     }
 }

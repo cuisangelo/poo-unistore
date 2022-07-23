@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalleDetalleComponent } from './detalle-detalle/detalle-detalle.component';
+import { TiendaClienteComponent } from './tienda-cliente/tienda-cliente.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetalleDetalleComponent } from './detalle-detalle/detalle-detalle.compo
     RegisterComponent,
     LoginComponent,
     PerfilComponent,
-    DetalleDetalleComponent
+    DetalleDetalleComponent,
+    TiendaClienteComponent
   ],
   imports: [
     BrowserModule,
