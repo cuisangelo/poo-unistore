@@ -1,32 +1,31 @@
-<div class="flex flex-row space-x-4 pt-2 pb-2 bg-[#6a1b0f]">
-  <div class="pl-5"><img src="favicon.ico"></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">UNI Store</p></a></div>
+<div class="flex flex-row space-x-4 pt-2 pb-2 bg-[#8e2929]">
+  <div class="pl-5"><img class=" rounded-lg h-7" src="assets/imagenes/icono.ico"></div>
+  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">UNI Store</p></a></div>
   <div class=" basis-1/2 grow"><p  class="text-center uppercase font-bold text-white font-['Verdana']"></p></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Inicio</p></a></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Tienda</p></a></div>
-  <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white">Perfil</p></a></div>
+  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Inicio</p></a></div>
+  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Tienda</p></a></div>
+  <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Perfil</p></a></div>
 </div>
 
 <div >
   <div>
-    <div class="border-2 bg-[url('assets/imagenes/asdf.jpg')] space-y-4">
-      <div class="w-10/12 mx-auto border-2 grid grid-cols-2 gap-1 bg-white">
-        <div class="box-border border-3 items-center	" >
-          <p class="text-center uppercase font-bold">Categoria</p>
-          <div class=" border-2 pt-3 flex flex-wrap">
+    <div class=" bg-[url('assets/imagenes/asdf.jpg')] space-y-4">
+      <div class="w-5/12 mx-auto  bg-white">
+        <div class="items-center" >
+          <div class="  pt-3 flex flex-wrap">
             <div *ngIf="producto!=null">
-              <img [src]="producto.url_imagen" >
+              <img class="w-fit rounded-lg	" [src]="producto.url_imagen" >
             </div>
           </div>
 
         </div >
 
-        <div class=" border-2">
+        <div class=" border-2 rounded">
           <div *ngIf="producto!=null">
             <div ><p class="text-4xl text-center font-semibold ">{{producto.nombre}}</p></div>
             <div >{{producto.descripcion}}</div>
 
-            <button class="bg-orange-700 text-gray-50 font-semibold rounded-md">Añadir carrito</button><br>
+            <button class="bg-[#3babba] hover:bg-[#3bbbba] text-gray-50 font-semibold rounded-md">Añadir carrito</button><br>
           </div>
 
         </div>
@@ -46,15 +45,15 @@
   <button class="bg-orange-700 text-gray-50 font-semibold rounded-md"><a href="tienda">Ver tienda</a></button>
   </div>
 </div>-->
-<div class="flex flex-row space-x-24 place-content-evenly pt-2 pb-2 bg-[#6a1b0f]">
+<div class="flex flex-row space-x-24 place-content-evenly pt-2 pb-2 bg-[#8e2929]">
   <div class="flex space-x-4 "><input placeholder="Escriba el codigo" type="text" [(ngModel)]="indice" style="border: 2px solid blue" class="rounded-md">
-    <button (click)="obtenerProducto()" class="bg-orange-700 text-gray-50 font-semibold rounded-md">Obtener Producto</button><br>
-    <button class="bg-orange-700 text-gray-50 font-semibold rounded-md"><a href="tienda">Volver tienda</a></button>
+    <button (click)="obtenerProducto()" class="bg-[#3babba] hover:bg-[#3bbbba] text-gray-50 font-semibold rounded-md">Obtener Producto</button><br>
+    <button class="bg-[#3babba] hover:bg-[#3bbbba] text-gray-50 font-semibold rounded-md"><a href="tienda">Volver tienda</a></button>
   </div>
 </div>
-<div>
-  <div class="border-2 bg-[url('assets/imagenes/asdf.jpg')] space-y-4">
-    <div class="w-fit mx-auto border-2 bg-white">
+<div class="bg-[url('assets/imagenes/asdf.jpg')]">
+  <div class=" w-9/12 mx-auto bg-[url('assets/imagenes/asdf.jpg')] space-y-4">
+    <div class="w-fit mx-auto bg-white">
       <div class="box-border border-3 items-center" ><p class="text-center uppercase font-bold">Categoria</p></div>
       <div class="  pt-3 grid grid-cols-4 gap-4  ">
         <article *ngFor="let item of lista, let indice=index">
