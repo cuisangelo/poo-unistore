@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uni.edu.pe.backend.dao.ClienteDao;
 import uni.edu.pe.backend.model.Cliente;
-import uni.edu.pe.backend.model.ClienteRegister;
 import uni.edu.pe.backend.model.ClienteRespuesta;
 
 
@@ -29,12 +28,12 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    public ClienteRespuesta loginByEmail(ClienteRegister clienteRegister) {
-        return dao.loginByEmail(clienteRegister);
+    public ClienteRespuesta loginByEmail(Cliente cliente) {
+        return dao.loginByEmail(cliente);
     }
 
     @Override
-    public int getUserId(ClienteRegister clienteRegister) {
-        return dao.getUserId(clienteRegister);
+    public int getUserId(Cliente cliente) {
+        return dao.getUserId(cliente);
     }
 }

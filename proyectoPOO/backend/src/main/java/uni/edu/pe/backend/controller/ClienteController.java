@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import uni.edu.pe.backend.model.Cliente;
 import uni.edu.pe.backend.model.ClienteRespuesta;
 import uni.edu.pe.backend.model.RespuestaCliente;
-import uni.edu.pe.backend.model.ClienteRegister;
 import uni.edu.pe.backend.service.ClienteService;
 
 @RestController
@@ -40,12 +39,12 @@ public class ClienteController {
     }
 
     @RequestMapping(value = "/loginByEmail", method = RequestMethod.POST)
-    public ClienteRespuesta loginByEmail(@RequestBody ClienteRegister clienteRegister) {
-        return service.loginByEmail(clienteRegister);
+    public ClienteRespuesta loginByEmail(@RequestBody Cliente cliente) {
+        return service.loginByEmail(cliente);
     }
 
     @RequestMapping(value = "/getUserId", method = RequestMethod.POST)
-    public int getUserId(@RequestBody ClienteRegister clienteRegister) {
-        return service.getUserId(clienteRegister);
+    public int getUserId(@RequestBody Cliente cliente) {
+        return service.getUserId(cliente);
     }
 }

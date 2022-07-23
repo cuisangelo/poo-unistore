@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import uni.edu.pe.backend.model.Cliente;
-import uni.edu.pe.backend.model.ClienteRegister;
 import uni.edu.pe.backend.model.ClienteRespuesta;
 
 import java.sql.*;
@@ -109,15 +108,15 @@ public class ClienteDaoImpl implements ClienteDao {
     }
 
     @Override
-    public ClienteRespuesta loginByEmail(ClienteRegister clienteRegister) {
+    public ClienteRespuesta loginByEmail(Cliente cliente) {
         ClienteRespuesta clienteRespuesta = new ClienteRespuesta();
         String correo = null, contrasena = null;
         getConnection();
         try {
             String sql = "SELECT cl.correo, cl.contrasena FROM cliente cl WHERE cl.correo = ? AND cl.contrasena = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, clienteRegister.getCorreo());
-            ps.setString(2, clienteRegister.getContrasena());
+            ps.setString(1, cliente.getCorreo());
+            ps.setString(2, cliente.getContrasena());
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 correo = rs.getString("correo");
@@ -135,14 +134,14 @@ public class ClienteDaoImpl implements ClienteDao {
     }
 
     @Override
-    public int getUserId(ClienteRegister clienteRegister) {
+    public int getUserId(Cliente cliente) {
         int id_cliente = 0;
         getConnection();
         try {
             String sql = "SELECT cl.id_cliente FROM cliente cl WHERE cl.correo = ? AND cl.contrasena = ?;";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, clienteRegister.getCorreo());
-            ps.setString(2, clienteRegister.getContrasena());
+            ps.setString(1, cliente.getCorreo());
+            ps.setString(2, cliente.getContrasena());
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 id_cliente = rs.getInt("id_cliente");
