@@ -58,7 +58,7 @@
       <div class="  pt-3 grid grid-cols-4 gap-4  ">
         <article *ngFor="let item of lista, let indice=index">
           <div (click)="obtenerProducto()" class=" cursor-pointer box-border md:box-content border-2 rounded-lg min-h-sm curso static pt-1 pr-1 pb-1 pl-1 ">
-            <img [src]="item.url_imagen" class="img-responsive rounded-lg pb-2 h-200 margen">
+            <img [src]="item.url_imagen" class="img-responsive rounded-lg pb-2 w-screen	 h-56">
             <div>
               <div class="text-center"><p class="text-md font-semibold ">{{item.nombre}}</p></div>
               <div><p class="text-xs">{{item.descripcion}}</p></div>

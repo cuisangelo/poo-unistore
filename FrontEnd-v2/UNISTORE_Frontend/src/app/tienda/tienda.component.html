@@ -13,24 +13,23 @@
   <div>
     <div class="border-2 bg-[url('assets/imagenes/asdf.jpg')] space-y-4">
       <div class="w-fit mx-auto border-2 bg-white">
-        <div class="box-border border-3 items-center" ><p class="text-center uppercase font-bold text-6xl">Tienda</p></div>
+        <div class="box-border border-3 items-center" ><p class="text-center uppercase font-bold text-5xl">Tienda</p></div>
         <div class="  pt-3 grid grid-cols-4 gap-4  ">
           <article *ngFor="let item of lista, let indice=index">
             <div class=" box-border md:box-content border-2 rounded-lg  curso static pt-1 pr-1 pb-1 pl-1">
-            <img [src]="item.url_imagen" class="img-responsive rounded-lg pb-2 h-200 margen">
+            <img [src]="item.url_imagen" class="img-responsive rounded-lg pb-2 h-56	">
               <div class="pb-4">
                 <div class="text-center pb-4 "><a class="text-2xl font-semibold ">{{item.nombre}}</a></div>
                 <div><a class="text-md pb-4">{{item.descripcion}}</a></div>
               </div>
               <div class="grid grid-cols-2 gap-1">
-                <div class="text-center line-through font-semibold">{{item.precio_unitario}}</div>
-                <div class="text-center ">{{item.precio_oferta}}</div>
+                <div class="text-center line-through font-semibold text-base	">s/ {{item.precio_unitario}}</div>
+                <div class="text-center text-base	 ">s/ {{item.precio_oferta}}</div>
               </div>
-              <div class="grid grid-cols-2 gap-1">
-                <div ><a class="btn" ><p class="text-center">Carrito</p></a></div>
-                <div ><a class="btn" ><p class="text-center" [routerLink]="['/detalle/',indice]">Detalle</p></a></div>
+              <div class="grid grid-cols-2 gap-1 absolute left-24	 bottom-0 ">
+                <div ><a class="btn" ><p class="text-lg	 text-center" [routerLink]="['/detalle/',indice]">Más Detalle</p></a></div>
               </div>
-            <div class="content-center text-center bg-[#fe0000] rounded absolute top-1 left-1 flex"><span class="text-white text-xs font-bold">OFERTA</span></div>
+            <div class="content-center text-center bg-[#fe0000] rounded absolute top-1 left-1 flex"><span class="text-white text-sm font-bold">OFERTA</span></div>
             </div>
           </article>
         </div>
