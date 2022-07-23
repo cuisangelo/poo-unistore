@@ -11,9 +11,13 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  loginForm = new FormGroup({
-    usuario: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+  registerForm = new FormGroup({
+    nombres: new FormControl('', Validators.required),
+    apellidos: new FormControl('', Validators.required),
+    direccion: new FormControl('', Validators.required),
+    telefono: new FormControl('', Validators.required),
+    correo: new FormControl('', Validators.required),
+    contrasena: new FormControl('', Validators.required)
   })
 
   constructor(private api: ApiService, private router: Router) { }
@@ -24,8 +28,22 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLogin(form: Usuario) {
+  /*onLogin(form: Usuario) {
     this.api.loginByEmail(form).subscribe(data =>{
+      let dataResponse: UsuarioRespuesta = data;
+      if(dataResponse.status == "ok") {
+        localStorage.setItem("token", dataResponse.response.token);
+        this.router.navigate(['tienda']);
+      }
+      else {
+        this.errorStatus = true;
+        this.errorMsg = dataResponse.response.errorMsg;
+      }
+    })
+  }*/
+
+  registerByEmail(form: any) {
+    this.api.registerByEmail(form).subscribe(data =>{
       let dataResponse: UsuarioRespuesta = data;
       if(dataResponse.status == "ok") {
         localStorage.setItem("token", dataResponse.response.token);

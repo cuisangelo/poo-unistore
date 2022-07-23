@@ -1,6 +1,11 @@
 export interface Usuario {
-  usuario: string;
-  password: string;
+  id_cliente: string;
+  nombres: string;
+  apellidos: string;
+  direccion: string;
+  telefono: string;
+  correo: string;
+  contrasena: string;
 }
 
 export interface UsuarioRespuesta {

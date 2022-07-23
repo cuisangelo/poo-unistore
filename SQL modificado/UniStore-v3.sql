@@ -50,7 +50,7 @@ CREATE TABLE detalle_pedido(
 	FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
 );
 
-CREATE TABLE correo_contrasena(
+CREATE TABLE cuenta(
 	correo VARCHAR(50),
 	contrasena VARCHAR(50),
 	id_cliente CHAR(9),
@@ -86,19 +86,22 @@ INSERT INTO producto VALUES (NEXTVAL(id_producto), 'Taza 100CC express UNI','Taz
 
 SELECT * FROM producto;
 
-producto
-SELECT cl.id_cliente, cl.nombres, cl.apellidos FROM cliente cl;
-
 CREATE SEQUENCE id_cliente START WITH 1;
 
-INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Luis', 'Rodriguez', 'Lima', '333333331','prueba@gmai.com','del1al8');
-INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Sergio', 'Yupanqui', 'Lima', '333333332','prueba@gmai.com','del1al8');
-INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Nestor', 'Audante', 'Lima', '333333333','prueba@gmai.com','del1al8');
-INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Daniel', 'Zanabria', 'Lima', '333333334','prueba@gmai.com','del1al8');
-INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Jesus', 'Quispe', 'Lima',  '333333335','prueba@gmai.com','del1al8');
-INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Javier', 'Canchano', 'Lima',  '333333336','prueba@gmai.com','del1al8');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Luis', 'Rodriguez', 'Lima', '333333331');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Sergio', 'Yupanqui', 'Lima', '333333332');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Nestor', 'Audante', 'Lima', '333333333');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Daniel', 'Zanabria', 'Lima', '333333334');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Jesus', 'Quispe', 'Lima',  '333333335');
+INSERT INTO cliente VALUES (NEXTVAL(id_cliente), 'Javier', 'Canchano', 'Lima',  '333333336');
 
-INSERT INTO cliente VALUES VALUES	(NEXTVAL(id_cliente),'Cliente 1', 'Apellido 1','Su casa', '333333336','prueba@gmai.com','del1al8');
+SELECT * FROM cliente;
+
+INSERT INTO cuenta VALUES ('jesus.quispe.d@uni.pe', 'POO221', 5);
+
+SELECT * FROM cuenta;
+
+SELECT cl.id_cliente, cl.nombres, cl.apellidos FROM cliente cl;
 
 CREATE SEQUENCE id_alumno START WITH 1;
 
@@ -107,15 +110,15 @@ INSERT INTO alumno VALUES(NEXTVAL(id_alumno), 2);
 INSERT INTO alumno VALUES(NEXTVAL(id_alumno), 4);
 INSERT INTO alumno VALUES(NEXTVAL(id_alumno), 5);
 
-<<<<<<< HEAD
 SELECT al.id_alumno, cl.id_cliente, cl.nombres, cl.apellidos FROM alumno al
 INNER JOIN cliente cl ON (al.id_cliente = cl.id_cliente);
 
 INSERT INTO correo_contrasena VALUES('jesus.quispe.d@uni.pe', 'POO221', 5);
 
 SELECT cc.correo, cc.contrasena FROM correo_contrasena cc;
-=======
-SELECT al.id_alumno, cl.id_cliente, cl.nombres, cl.apellidos, direccion , telefono ,correo cc.correo, cc.contrasena FROM alumno al
-INNER JOIN cliente cl ON (al.id_cliente = cl.id_cliente);cliente
 
->>>>>>> 26652ff373413f89ec6c810d242df0b4757c06cb
+SELECT al.id_alumno, cl.id_cliente, cl.nombres, cl.apellidos, direccion , telefono ,correo cc.correo, cc.contrasena FROM alumno al
+INNER JOIN cliente cl ON (al.id_cliente = cl.id_cliente);
+
+INSERT INTO cliente VALUES (?, ?, ?, ?, ?);
+INSERT INTO cuenta VALUES (?, ?, ?);

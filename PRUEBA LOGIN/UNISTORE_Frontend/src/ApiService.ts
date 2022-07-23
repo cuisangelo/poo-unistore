@@ -49,4 +49,12 @@ export class ApiService {
       );
   }
 
+  registerByEmail(data: Usuario): Observable<UsuarioRespuesta> {
+    return this.http.post<UsuarioRespuesta>('http://localhost:8080/registerByEmail', data, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
 }

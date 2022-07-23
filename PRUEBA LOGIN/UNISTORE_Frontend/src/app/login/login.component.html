@@ -1,10 +1,35 @@
 <div>
-  <form>
-    <input type="text" id="login" placeholder="login" formControlName="usuario">
-    <input type="password" id="password" placeholder="password" formControlName="password">
+  <!--<div>
+    <h1>PAGINA DE REGISTRO</h1>
+  </div>
+  <div>
+    <p>NOMBRES</p>
+    <input type="text" placeholder="Escriba sus nombres" [(ngModel)]="nombre">
+  </div>
+  <div>
+    <button (click)="registerByEmail()">REGISTRAR</button>
+  </div>-->
+  <form [formGroup]="registerForm" (ngSubmit)="registerByEmail(registerForm.value)">
+    <div>
+      <input type="text" id="nombres" placeholder="nombres" formControlName="nombres">
+    </div>
+    <div>
+      <input type="text" id="apellidos" placeholder="apellidos" formControlName="apellidos">
+    </div>
+    <div>
+      <input type="text" id="direccion" placeholder="direccion" formControlName="direccion">
+    </div>
+    <div>
+      <input type="text" id="telefono" placeholder="telefono" formControlName="telefono">
+    </div>
+    <div>
+      <input type="email" id="correo" placeholder="correo" formControlName="correo">
+    </div>
+    <div>
+      <input type="password" id="contrasena" placeholder="contrasena" formControlName="contrasena">
+    </div>
     <input type="submit" value="Log In">
   </form>
-
   <div *ngIf="errorStatus">
     <p>{{errorMsg}}</p>
   </div>
