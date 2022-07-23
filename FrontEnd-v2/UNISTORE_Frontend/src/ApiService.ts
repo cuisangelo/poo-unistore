@@ -27,14 +27,14 @@ export class ApiService {
 
 
   obtenerProducto(): Observable<RespuestaProducto> {
-    return this.http.post<RespuestaProducto>('http://localhost:6060/obtener-productos', null, this.httpOptions)
+    return this.http.post<RespuestaProducto>('http://localhost:8080/obtener-productos', null, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
       );
   }
   agregarCliente(data: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>('http://localhost:6060/agregar-cliente', data, this.httpOptions)
+    return this.http.post<Cliente>('http://localhost:8080/agregar-cliente', data, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
