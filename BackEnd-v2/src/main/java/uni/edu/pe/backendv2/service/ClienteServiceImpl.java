@@ -6,6 +6,7 @@ import uni.edu.pe.backendv2.dao.ClienteDao;
 import uni.edu.pe.backendv2.model.Cliente;
 import uni.edu.pe.backendv2.model.UsuarioCuenta;
 import uni.edu.pe.backendv2.model.UsuarioRegister;
+import uni.edu.pe.backendv2.model.UsuarioRespuesta;
 
 import java.util.List;
 @Service
@@ -23,7 +24,12 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    public String registerByEmail(UsuarioRegister usuarioRegister) {
+    public UsuarioRespuesta registerByEmail(UsuarioRegister usuarioRegister) {
         return dao.registerByEmail(usuarioRegister);
+    }
+
+    @Override
+    public List<String> getUserData(UsuarioRegister usuarioRegister) {
+        return dao.getUserData(usuarioRegister);
     }
 }

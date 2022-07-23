@@ -2,11 +2,10 @@ package uni.edu.pe.backendv2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import uni.edu.pe.backendv2.model.Cliente;
-import uni.edu.pe.backendv2.model.RespuestaCliente;
-import uni.edu.pe.backendv2.model.UsuarioCuenta;
-import uni.edu.pe.backendv2.model.UsuarioRegister;
+import uni.edu.pe.backendv2.model.*;
 import uni.edu.pe.backendv2.service.ClienteService;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -35,7 +34,12 @@ public class ClienteController {
     }
 
     @RequestMapping(value = "/registerByEmail", method = RequestMethod.POST)
-    public String registerByEmail(@RequestBody UsuarioRegister usuarioRegister) {
+    public UsuarioRespuesta registerByEmail(@RequestBody UsuarioRegister usuarioRegister) {
         return service.registerByEmail(usuarioRegister);
+    }
+
+    @RequestMapping(value = "/getUserData", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    public List<String> getUserData(@RequestBody UsuarioRegister usuarioRegister) {
+        return service.getUserData(usuarioRegister);
     }
 }

@@ -48,4 +48,20 @@ export class ApiService {
       );
   }
 
+  loginByEmail(form: UsuarioRegister): Observable<string> {
+    return this.http.post<string>('http://localhost:8080/loginByEmail', form, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
+  getUserData(form: UsuarioRegister): Observable<UsuarioRespuesta> {
+    return this.http.post<UsuarioRespuesta>('http://localhost:8080/registerByEmail', form, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.errorHandl)
+      );
+  }
+
 }

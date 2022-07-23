@@ -14,25 +14,27 @@
   <div class="w-fit mx-auto border-2 bg-white grid grid-cols-2 ">
 
     <form [formGroup]="registerForm" (ngSubmit)="registerByEmail(registerForm.value)">
-    <div>
-      <input type="text" id="nombres" placeholder="nombres" formControlName="nombres">
-    </div>
-    <div>
-      <input type="text" id="apellidos" placeholder="apellidos" formControlName="apellidos">
-    </div>
-    <div>
-      <input type="text" id="direccion" placeholder="direccion" formControlName="direccion">
-    </div>
-    <div>
-      <input type="text" id="telefono" placeholder="telefono" formControlName="telefono">
-    </div>
-    <div>
-      <input type="email" id="correo" placeholder="correo" formControlName="correo">
-    </div>
-    <div>
-      <input type="password" id="contrasena" placeholder="contrasena" formControlName="contrasena">
-    </div>
-    <input type="submit" value="Log In">
+      <div>
+        <input type="text" id="nombres" placeholder="nombres" formControlName="nombres">
+      </div>
+      <div>
+        <input type="text" id="apellidos" placeholder="apellidos" formControlName="apellidos">
+      </div>
+      <div>
+        <input type="text" id="direccion" placeholder="direccion" formControlName="direccion">
+      </div>
+      <div>
+        <input type="text" id="telefono" placeholder="telefono" formControlName="telefono">
+      </div>
+      <div>
+        <input type="email" id="correo" placeholder="correo" formControlName="correo">
+      </div>
+      <div>
+        <input type="password" id="contrasena" placeholder="contrasena" formControlName="contrasena">
+      </div>
+      <div>
+        <input type="submit" value="Log In">
+      </div>
     </form>
     <div *ngIf="errorStatus">
       <p>{{errorMsg}}</p>
