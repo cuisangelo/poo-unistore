@@ -2,7 +2,6 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Cliente, RespuestaProducto, Usuario, UsuarioLogin, UsuarioRespuesta} from "./interfaces";
 import {catchError, Observable, retry, throwError} from "rxjs";
-import {FormControl, ɵFormGroupValue, ɵTypedOrUntyped} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
