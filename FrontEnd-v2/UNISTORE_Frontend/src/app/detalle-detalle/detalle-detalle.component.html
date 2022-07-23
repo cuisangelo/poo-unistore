@@ -14,9 +14,9 @@
         <div class="box-border border-3 items-center	" >
           <p class="text-center uppercase font-bold">Categoria</p>
           <div class=" border-2 pt-3 flex flex-wrap">
-              <div *ngIf="producto!=null">
-                <img [src]="producto.url_imagen" >
-              </div>
+            <div *ngIf="producto!=null">
+              <img [src]="producto.url_imagen" >
+            </div>
           </div>
 
         </div >
@@ -26,7 +26,7 @@
             <div ><p class="text-4xl text-center font-semibold ">{{producto.nombre}}</p></div>
             <div >{{producto.descripcion}}</div>
 
-              <button class="bg-orange-700 text-gray-50 font-semibold rounded-md">Añadir carrito</button><br>
+            <button class="bg-orange-700 text-gray-50 font-semibold rounded-md">Añadir carrito</button><br>
           </div>
 
         </div>
@@ -69,7 +69,7 @@
               <div class="text-center ">{{item.precio_unitario}}</div>
             </div>
             <div>
-              <div class="border-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 " ><a class="btn" ><p class="text-sm  text-center" [routerLink]="['/detalle-detalle/',indice]">Más Detalle</p></a></div>
+              <div class="border-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 " ><a class="btn" ><p class="text-sm  text-center" [routerLink]="['/detalle/',indice]">Más Detalle</p></a></div>
             </div>
             <div class="content-center text-center bg-[#fe0000] rounded flex"><span class="text-white text-xs font-bold">OFERTA</span></div>
           </div>

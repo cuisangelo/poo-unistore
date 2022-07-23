@@ -10,6 +10,7 @@ import { ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { DetalleDetalleComponent } from './detalle-detalle/detalle-detalle.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     DetalleComponent,
     RegisterComponent,
     LoginComponent,
-    PerfilComponent
+    PerfilComponent,
+    DetalleDetalleComponent
   ],
   imports: [
     BrowserModule,
