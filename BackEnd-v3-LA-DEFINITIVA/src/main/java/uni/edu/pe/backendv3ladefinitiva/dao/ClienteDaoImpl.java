@@ -4,10 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import uni.edu.pe.backendv3ladefinitiva.model.Cliente;
+<<<<<<< HEAD
 import uni.edu.pe.backendv3ladefinitiva.model.ClienteRegister;
 import uni.edu.pe.backendv3ladefinitiva.model.ClienteRespuesta;
+=======
+import uni.edu.pe.backendv3ladefinitiva.model.Producto;
+import uni.edu.pe.backendv3ladefinitiva.model.UsuarioCuenta;
+import uni.edu.pe.backendv3ladefinitiva.model.UsuarioRegister;
+>>>>>>> b6976111d36d8eeb638d605da17817f797181fa8
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 @Repository
 public class ClienteDaoImpl implements ClienteDao {
@@ -55,7 +62,20 @@ public class ClienteDaoImpl implements ClienteDao {
 
     @Override
     public List<Cliente> obtenerCliente() {
-        return null;
+        List<Cliente> lista = new ArrayList<>();
+        String sql = " SELECT cl.id_cliente, cl.nombres, cl.apellidos, cl.direccion, cl.telefono, cl.correo, cl.contrasena FROM cliente cl;";
+        try {
+            obtenerConexion();
+            Statement sentencia = conexion.createStatement();
+            ResultSet resultado = sentencia.executeQuery(sql);
+            while (resultado.next()){
+                lista.add(extraerCliente(resultado));
+            }
+            cerrarConexion(resultado,sentencia);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return lista;
     }
 
     private Cliente extraerCliente(ResultSet resultado) throws SQLException {
