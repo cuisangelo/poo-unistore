@@ -20,6 +20,7 @@
           </div>
 
         </div >
+
         <div class=" border-2">
           <div *ngIf="producto!=null">
             <div ><p class="text-4xl text-center font-semibold ">{{producto.nombre}}</p></div>
@@ -68,7 +69,7 @@
               <div class="text-center ">{{item.precio_unitario}}</div>
             </div>
             <div>
-              <div ><a class="btn" ><p class="text-center">Más Detalle</p></a></div>
+              <div class="border-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 " ><a class="btn" ><p class="text-sm  text-center" [routerLink]="['/detalle/',indice]">Más Detalle</p></a></div>
             </div>
             <div class="content-center text-center bg-[#fe0000] rounded flex"><span class="text-white text-xs font-bold">OFERTA</span></div>
           </div>

@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c624cb64-e5a9-44fb-a1d2-8d7a853a1fd9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/tienda/tienda.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/tienda/tienda.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/detalle/detalle.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd-v2/UNISTORE_Frontend/src/app/detalle/detalle.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
