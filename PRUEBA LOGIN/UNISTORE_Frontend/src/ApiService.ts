@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Cliente, RespuestaProducto, Usuario, UsuarioRespuesta} from "./interfaces";
+import {Cliente, RespuestaProducto, Usuario, UsuarioLogin, UsuarioRespuesta} from "./interfaces";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {FormControl, ɵFormGroupValue, ɵTypedOrUntyped} from "@angular/forms";
 
@@ -33,6 +33,7 @@ export class ApiService {
         catchError(this.errorHandl)
       );
   }
+
   agregarCliente(data: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>('http://localhost:8080/agregar-cliente', data, this.httpOptions)
       .pipe(
@@ -41,20 +42,20 @@ export class ApiService {
       );
   }
 
-  loginByEmail(data: Usuario): Observable<UsuarioRespuesta> {
-    return this.http.post<UsuarioRespuesta>('http://localhost:8080/loginByEmail', data, this.httpOptions)
+  loginByEmail(data: UsuarioLogin): Observable<string> {
+    return this.http.post<string>('http://localhost:7070/loginByEmail', data, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
       );
   }
 
-  registerByEmail(data: Usuario): Observable<UsuarioRespuesta> {
-    return this.http.post<UsuarioRespuesta>('http://localhost:8080/registerByEmail', data, this.httpOptions)
+  /*registerByEmail(data: Usuario): Observable<UsuarioRespuesta> {
+    return this.http.post<UsuarioRespuesta>('http://localhost:7070/registerByEmail', data, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
       );
-  }
+  }*/
 
 }

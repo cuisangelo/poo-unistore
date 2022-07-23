@@ -11,11 +11,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  registerForm = new FormGroup({
-    nombres: new FormControl('', Validators.required),
-    apellidos: new FormControl('', Validators.required),
-    direccion: new FormControl('', Validators.required),
-    telefono: new FormControl('', Validators.required),
+  loginForm = new FormGroup({
     correo: new FormControl('', Validators.required),
     contrasena: new FormControl('', Validators.required)
   })
@@ -28,21 +24,21 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*onLogin(form: Usuario) {
+  loginByEmail(form: any) {
     this.api.loginByEmail(form).subscribe(data =>{
-      let dataResponse: UsuarioRespuesta = data;
-      if(dataResponse.status == "ok") {
-        localStorage.setItem("token", dataResponse.response.token);
+      let dataResponse: string = data;
+      if(dataResponse == "ok") {
+        //localStorage.setItem("token", dataResponse.response.token);
         this.router.navigate(['tienda']);
       }
       else {
         this.errorStatus = true;
-        this.errorMsg = dataResponse.response.errorMsg;
+        this.errorMsg = dataResponse;
       }
     })
-  }*/
+  }
 
-  registerByEmail(form: any) {
+  /*registerByEmail(form: any) {
     this.api.registerByEmail(form).subscribe(data =>{
       let dataResponse: UsuarioRespuesta = data;
       if(dataResponse.status == "ok") {
@@ -54,6 +50,6 @@ export class LoginComponent implements OnInit {
         this.errorMsg = dataResponse.response.errorMsg;
       }
     })
-  }
+  }*/
 
 }

@@ -8,10 +8,16 @@ export interface Usuario {
   contrasena: string;
 }
 
+export interface UsuarioLogin {
+  correo: string;
+  contrasena: string;
+}
+
 export interface UsuarioRespuesta {
   status: string;
   response: any;
 }
+
 export interface Producto{
   id_producto:string;
   nombre:string;
