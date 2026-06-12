@@ -1,2 +1,18 @@
+# Node / Angular
+node_modules/
+dist/
+.angular/
 
-UNISTORE_Backend/.idea/workspace.xml
+# Java / Maven
+target/
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Env / tooling
+.env
+.env.local
+.vercel
