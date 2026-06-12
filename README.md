@@ -13,15 +13,13 @@ E-commerce académico para una tienda universitaria: catálogo de productos con 
 | Frontend | Angular 14 + Tailwind CSS 3 |
 | Backend | Java 11 + Spring Boot 2.7 (JDBC) |
 | Base de datos | MariaDB/MySQL |
-| Prototipo inicial | HTML/CSS estático (plantilla W3layouts adaptada) |
 
 ## Estructura
 
 ```
-frontend/        SPA Angular. Tiene modo demo con datos mock — desplegable en Vercel
-backend/         API Spring Boot original (2022): requiere MariaDB local
-database/        Script SQL del esquema (unistore.sql)
-prototipo-html/  Primera etapa del curso: prototipo estático (plantilla + páginas propias)
+frontend/   SPA Angular. Tiene modo demo con datos mock — desplegable en Vercel
+backend/    API Spring Boot original (2022): requiere MariaDB local
+database/   Script SQL del esquema (unistore.sql)
 ```
 
 ## Demo (solo visualización)
