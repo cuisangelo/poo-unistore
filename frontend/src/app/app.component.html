@@ -1,8 +1,31 @@
 <div
-  *ngIf="demo"
-  class="bg-amber-300 text-amber-900 text-center text-sm font-semibold py-1.5"
+  *ngIf="demo && bannerOpen"
+  class="demo-banner sticky top-0 z-40 flex h-12 items-center justify-center bg-white px-12 text-center text-sm font-semibold text-gray-800"
 >
-  UNI Store · maqueta académica (curso POO, 2022) — demo con datos ficticios,
-  sin backend: los cambios no se guardan.
+  <div class="demo-banner-flow absolute inset-0" aria-hidden="true"></div>
+  <span class="relative"
+    >🧪 UNI Store · maqueta académica (POO, 2022) — demo con datos ficticios:
+    los cambios no se guardan.</span
+  >
+  <button
+    type="button"
+    aria-label="Cerrar aviso"
+    (click)="dismissBanner()"
+    class="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600"
+  >
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  </button>
 </div>
 <router-outlet></router-outlet>

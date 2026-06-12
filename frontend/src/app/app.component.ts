@@ -9,4 +9,10 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = 'UNISTORE';
   demo = environment.demo;
+  bannerOpen = sessionStorage.getItem('demo-banner-dismissed') !== 'true';
+
+  dismissBanner(): void {
+    this.bannerOpen = false;
+    sessionStorage.setItem('demo-banner-dismissed', 'true');
+  }
 }

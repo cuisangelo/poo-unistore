@@ -1,0 +1,34 @@
+// Light-refraction flow effect, ported from the fumadocs rainbow banner.
+$banner-mask: linear-gradient(to bottom, white, transparent),
+  radial-gradient(circle at top center, white, transparent);
+
+.demo-banner {
+  overflow: hidden;
+}
+
+.demo-banner-flow {
+  mask-image: $banner-mask;
+  -webkit-mask-image: $banner-mask;
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+  background-image: repeating-linear-gradient(
+    70deg,
+    rgba(0, 149, 255, 0.56) 0%,
+    rgba(231, 77, 255, 0.77) 12.5%,
+    rgba(255, 0, 0, 0.73) 25%,
+    rgba(131, 255, 166, 0.66) 37.5%,
+    rgba(0, 149, 255, 0.56) 50%
+  );
+  background-size: 200% 100%;
+  filter: saturate(2);
+  animation: demo-banner-flow 20s linear infinite;
+}
+
+@keyframes demo-banner-flow {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
