@@ -1,4 +1,4 @@
-// Light-refraction flow effect, ported from the fumadocs rainbow banner.
+// Cool monochrome flow effect (white/slate/blue), fumadocs-banner style.
 $banner-mask: linear-gradient(to bottom, white, transparent),
   radial-gradient(circle at top center, white, transparent);
 
@@ -13,15 +13,14 @@ $banner-mask: linear-gradient(to bottom, white, transparent),
   -webkit-mask-composite: source-in;
   background-image: repeating-linear-gradient(
     70deg,
-    rgba(0, 149, 255, 0.56) 0%,
-    rgba(231, 77, 255, 0.77) 12.5%,
-    rgba(255, 0, 0, 0.73) 25%,
-    rgba(131, 255, 166, 0.66) 37.5%,
-    rgba(0, 149, 255, 0.56) 50%
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(96, 165, 250, 0.3) 12.5%,
+    rgba(148, 163, 184, 0.22) 25%,
+    rgba(186, 230, 253, 0.28) 37.5%,
+    rgba(255, 255, 255, 0.2) 50%
   );
   background-size: 200% 100%;
-  filter: saturate(1.8);
-  opacity: 0.55;
+  opacity: 0.8;
   animation: demo-banner-flow 20s linear infinite;
 }
 
