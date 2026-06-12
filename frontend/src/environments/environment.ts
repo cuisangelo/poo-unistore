@@ -2,8 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// demo: serves static fixtures instead of calling the 2022 Spring Boot
+// backend. Set to false to run against the real stack (localhost:8080).
 export const environment = {
-  production: false
+  production: false,
+  demo: true
 };
 
 /*

@@ -10,6 +10,7 @@ import {TiendaClienteComponent} from "./tienda-cliente/tienda-cliente.component"
 
 
 const routes: Routes = [
+  {path: "", redirectTo: "tienda", pathMatch: "full"},
   {path: "tienda", component: TiendaComponent},
   {path: "register", component: RegisterComponent},
   {path: "tienda/:id", component: TiendaClienteComponent},

@@ -1,7 +1,7 @@
 <div class="flex flex-row space-x-4 pt-2 pb-2 bg-[#8e2929]">
   <div class="pl-5"><img class=" rounded-lg h-7" src="assets/imagenes/icono.ico"></div>
   <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">UNI Store</p></a></div>
-  <div class=" basis-1/2 grow"><p  class="text-center uppercase font-bold text-white font-['Verdana']">BIENVENIDO, *NOMBRE*</p></div>
+  <div class=" basis-1/2 grow"><p  class="text-center uppercase font-bold text-white font-['Verdana']">BIENVENIDO, {{ cliente?.nombres || '' | uppercase }}</p></div>
   <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Inicio</p></a></div>
   <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Tienda</p></a></div>
   <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Perfil</p></a></div>
@@ -10,14 +10,14 @@
 <div>
 
   <div class="grid grid-cols-2">
-    <div>
-      <div>AQUI VA LA FOTO</div>
+    <div class="p-6">
+      <img src="assets/imagenes/uni.jpg" class="rounded-lg" alt="Foto de perfil">
     </div>
-    <div>
-      <div>NOMBRES</div>
-      <div>APELLIDOS</div>
-      <div>DIRECCION</div>
-      <div>TELEFONO</div>
+    <div class="p-6 space-y-2">
+      <div><span class="font-bold uppercase">Nombres:</span> {{ cliente?.nombres }}</div>
+      <div><span class="font-bold uppercase">Apellidos:</span> {{ cliente?.apellidos }}</div>
+      <div><span class="font-bold uppercase">Dirección:</span> {{ cliente?.direccion }}</div>
+      <div><span class="font-bold uppercase">Teléfono:</span> {{ cliente?.telefono }}</div>
     </div>
     <div class="border-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 " ><a class="btn" ><p class="text-sm  text-center" [routerLink]="['/tienda/',indice]">Tienda</p></a></div>
   </div>
