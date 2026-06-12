@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalleDetalleComponent } from './detalle-detalle/detalle-detalle.component';
 import { TiendaClienteComponent } from './tienda-cliente/tienda-cliente.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TiendaClienteComponent } from './tienda-cliente/tienda-cliente.componen
     LoginComponent,
     PerfilComponent,
     DetalleDetalleComponent,
-    TiendaClienteComponent
+    TiendaClienteComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,78 @@
+<header class="bg-guinda text-white">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
+    <a routerLink="/tienda" class="flex items-center gap-2">
+      <img src="assets/imagenes/icono.ico" class="h-8 w-8 rounded" alt="UNI Store">
+      <span class="font-bold tracking-wide uppercase">UNI Store</span>
+    </a>
+    <div class="flex-1"></div>
+    <a routerLink="/tienda" class="text-sm font-semibold uppercase hover:text-accent">Tienda</a>
+    <a routerLink="/carrito" class="relative text-sm font-semibold uppercase text-accent">
+      Carrito
+      <span
+        *ngIf="cart.count > 0"
+        class="absolute -top-2 -right-4 bg-accent text-white text-xs font-bold rounded-full px-1.5"
+        >{{ cart.count }}</span
+      >
+    </a>
+  </nav>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold text-gray-900 uppercase tracking-wide mb-6">
+    Mi carrito
+  </h1>
+
+  <div
+    *ngIf="cart.items.length === 0"
+    class="bg-white rounded-xl shadow-sm p-10 text-center text-gray-500"
+  >
+    Tu carrito está vacío.
+    <a routerLink="/tienda" class="text-guinda font-semibold hover:underline"
+      >Ir a la tienda</a
+    >
+  </div>
+
+  <div *ngIf="cart.items.length > 0" class="bg-white rounded-xl shadow-sm divide-y">
+    <div
+      *ngFor="let item of cart.items"
+      class="flex items-center gap-4 p-4"
+    >
+      <img
+        [src]="item.producto.url_imagen"
+        class="h-16 w-16 rounded-lg object-cover"
+        [alt]="item.producto.nombre"
+      />
+      <div class="flex-1">
+        <p class="font-semibold text-gray-900">{{ item.producto.nombre }}</p>
+        <p class="text-sm text-gray-500">
+          {{ item.cantidad }} × s/ {{ item.producto.precio_oferta }}
+        </p>
+      </div>
+      <p class="font-bold text-guinda">
+        s/ {{ item.cantidad * item.producto.precio_oferta }}
+      </p>
+      <button
+        (click)="cart.remove(item.producto.id_producto)"
+        class="text-sm text-gray-400 hover:text-guinda font-semibold"
+      >
+        Quitar
+      </button>
+    </div>
+
+    <div class="flex items-center justify-between p-4">
+      <button
+        (click)="cart.clear()"
+        class="text-sm text-gray-500 hover:text-guinda font-semibold"
+      >
+        Vaciar carrito
+      </button>
+      <p class="text-lg font-bold text-gray-900">
+        Total: <span class="text-guinda">s/ {{ cart.total }}</span>
+      </p>
+    </div>
+  </div>
+
+  <p class="mt-4 text-xs text-gray-400">
+    Carrito de demostración: se guarda solo en tu navegador.
+  </p>
+</main>

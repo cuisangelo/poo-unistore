@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Producto} from "../../interfaces";
 import {ApiService} from "../../ApiService";
 import {ActivatedRoute} from "@angular/router";
+import {CartService} from "../carrito/cart.service";
 
 @Component({
   selector: 'app-detalle-detalle',
@@ -14,7 +15,7 @@ export class DetalleDetalleComponent implements OnInit {
   lista:Producto[] = []
   indice: number = -1;
 
-  constructor(private api: ApiService, private activatedRoute: ActivatedRoute) { }
+  constructor(private api: ApiService, private activatedRoute: ActivatedRoute, public cart: CartService) { }
 
   ngOnInit(): void {
     this.indice = Number(this.activatedRoute.snapshot.paramMap.get('id'));
