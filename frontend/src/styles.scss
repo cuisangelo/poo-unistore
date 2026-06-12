@@ -7,3 +7,9 @@
 .btn{
   @apply rounded-full uppercase text-xs font-bold cursor-pointer tracking-wider;
 }
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-800 antialiased;
+  }
+}

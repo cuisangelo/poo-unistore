@@ -48,4 +48,6 @@ Solo si se quiere correr la aplicación contra el backend real:
 
 ## Nota histórica
 
+El carrito de compras es un agregado posterior para la demo (servicio client-side con `localStorage`): en el código 2022 solo existían botones decorativos, sin lógica en el frontend ni endpoints en el backend.
+
 El código 2022 se conserva a propósito (plantillas con clases utilitarias repetidas, vistas a medio cablear, sin guards de auth). Los únicos cambios posteriores son: el modo demo con banner, la ruta raíz que redirige a la tienda, el binding de datos en el perfil, configuración por variables de entorno en el backend, la reorganización de carpetas (las iteraciones intermedias —BackEnd-v2/v2.1/v3, FrontEnd-v2, PRUEBA LOGIN— viven en el historial de git) y la actualización de dependencias dentro de los mismos majors con migración a pnpm.

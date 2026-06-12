@@ -1,58 +1,100 @@
-<div class="flex flex-row space-x-4 pt-2 pb-2 bg-[#8e2929]">
-  <div class="pl-5"><img class=" rounded-lg h-7" src="assets/imagenes/icono.ico"></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">UNI Store</p></a></div>
-  <div class=" basis-1/2 grow"><p  class="text-center uppercase font-bold text-white font-['Verdana']"></p></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Inicio</p></a></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Tienda</p></a></div>
-  <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Perfil</p></a></div>
-</div>
-<div class="bg-contain bg-[url('assets/imagenes/asdf.jpg')]">
-<div class=" bg-auto bg-no-repeat ">
+<header class="bg-guinda text-white">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
+    <a routerLink="/tienda" class="flex items-center gap-2">
+      <img src="assets/imagenes/icono.ico" class="h-8 w-8 rounded" alt="UNI Store">
+      <span class="font-bold tracking-wide uppercase">UNI Store</span>
+    </a>
+    <div class="flex-1"></div>
+    <a routerLink="/tienda" class="text-sm font-semibold uppercase hover:text-accent">Inicio</a>
+    <a routerLink="/tienda" class="text-sm font-semibold uppercase hover:text-accent">Tienda</a>
+    <a routerLink="/register" class="text-sm font-semibold uppercase hover:text-accent">Perfil</a>
+  </nav>
+</header>
 
-        <div class="mx-auto w-1/2">
-          <div class="classDiv">
-           <form [formGroup]="registerForm" (ngSubmit)="registerByEmail(registerForm.value)">
-          <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Nombre</p>
-          <input type="text" placeholder="Escriba su nombre" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="nombres" formControlName="nombres"/>
-        <div>
-        <div class="classDiv">
-          <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Apellido</p>
-          <input type="text" placeholder="Escriba su apellido"class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="apellidos" formControlName="apellidos"/>
-        </div>
-        </div>
-        <div class="grid grid-cols-2">
-          <div class="classDiv">
-            <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Correo</p>
-            <input type="email" placeholder="Escriba su correo" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="correo" formControlName="correo"/>
-          </div>
-          <div class="classDiv">
-            <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Contraseña</p>
-            <input type="password" placeholder="Escriba su contraseña" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="contrasena" formControlName="contrasena"/>
-          </div>
-        </div>
-        <div class="classDiv">
-          <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Direccion</p>
-          <input type="text" placeholder="Escriba su direccion" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="direccion" formControlName="direccion"/>
-        </div>
-        <div class="classDiv">
-          <p class="font-semibold text-center text-xl uppercase border-2 rounded-lg text-white pt-1 pb-1 bg-[#8e2929] ">Telefono</p>
-          <input type="text" placeholder="Escriba su telefono" class=" border-[#3babba] w-full mb-2 border-2 classDiv rounded-lg" id="telefono"  formControlName="telefono"/>
-        </div>
-        <div class="space-y-2">
-          <input class="bg-[#3babba] hover:bg-sky-700 text-white w-full rounded-md" type="submit" value="Registrate">
-          <div>
-            <button class="bg-[#3babba] hover:bg-sky-700 text-white w-full rounded-md" ><a href="login">¿Ya estas registrado? Logeate</a></button>
-          </div>
-        </div>
-    </form>
-    <div *ngIf="errorStatus">
+<main class="min-h-[70vh] flex items-center justify-center px-4 py-8">
+  <div class="w-full max-w-md bg-white rounded-xl shadow p-8">
+    <h1 class="text-2xl font-bold text-gray-900 mb-6">Regístrate</h1>
+
+    <div *ngIf="errorStatus" class="bg-red-50 text-red-700 text-sm rounded-lg p-3 mb-4">
       <p>{{errorMsg}}</p>
     </div>
 
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="registerByEmail(registerForm.value)"
+      class="space-y-4"
+    >
+      <div>
+        <label for="nombres" class="block text-sm font-semibold text-gray-700 mb-1">Nombres</label>
+        <input
+          type="text"
+          id="nombres"
+          formControlName="nombres"
+          placeholder="Escriba su nombre"
+          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-guinda/50 focus:border-guinda"
+        />
       </div>
+      <div>
+        <label for="apellidos" class="block text-sm font-semibold text-gray-700 mb-1">Apellidos</label>
+        <input
+          type="text"
+          id="apellidos"
+          formControlName="apellidos"
+          placeholder="Escriba su apellido"
+          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-guinda/50 focus:border-guinda"
+        />
+      </div>
+      <div>
+        <label for="correo" class="block text-sm font-semibold text-gray-700 mb-1">Correo</label>
+        <input
+          type="email"
+          id="correo"
+          formControlName="correo"
+          placeholder="Escriba su correo"
+          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-guinda/50 focus:border-guinda"
+        />
+      </div>
+      <div>
+        <label for="contrasena" class="block text-sm font-semibold text-gray-700 mb-1">Contraseña</label>
+        <input
+          type="password"
+          id="contrasena"
+          formControlName="contrasena"
+          placeholder="Escriba su contraseña"
+          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-guinda/50 focus:border-guinda"
+        />
+      </div>
+      <div>
+        <label for="direccion" class="block text-sm font-semibold text-gray-700 mb-1">Dirección</label>
+        <input
+          type="text"
+          id="direccion"
+          formControlName="direccion"
+          placeholder="Escriba su dirección"
+          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-guinda/50 focus:border-guinda"
+        />
+      </div>
+      <div>
+        <label for="telefono" class="block text-sm font-semibold text-gray-700 mb-1">Teléfono</label>
+        <input
+          type="text"
+          id="telefono"
+          formControlName="telefono"
+          placeholder="Escriba su teléfono"
+          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-guinda/50 focus:border-guinda"
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-guinda hover:bg-guinda-dark text-white font-semibold rounded-lg px-4 py-2.5"
+      >
+        Regístrate
+      </button>
+    </form>
 
-    <div>
-      <img  class=" rounded-lg border-2 border-[#3babba] " src="assets/imagenes/uni.jpg">
-    </div></div>
-</div></div>
-
+    <p class="mt-4 text-center text-sm text-gray-600">
+      ¿Ya estás registrado?
+      <a routerLink="/login" class="text-guinda font-semibold hover:underline">Inicia sesión</a>
+    </p>
+  </div>
+</main>

@@ -1,79 +1,95 @@
-<div class="flex flex-row space-x-4 pt-2 pb-2 bg-[#8e2929]">
-  <div class="pl-5"><img class=" rounded-lg h-7" src="assets/imagenes/icono.ico"></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">UNI Store</p></a></div>
-  <div class=" basis-1/2 grow"><p  class="text-center uppercase font-bold text-white font-['Verdana']"></p></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Inicio</p></a></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Tienda</p></a></div>
-  <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Perfil</p></a></div>
-</div>
+<header class="bg-guinda text-white">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
+    <a routerLink="/tienda" class="flex items-center gap-2">
+      <img src="assets/imagenes/icono.ico" class="h-8 w-8 rounded" alt="UNI Store">
+      <span class="font-bold tracking-wide uppercase">UNI Store</span>
+    </a>
+    <div class="flex-1"></div>
+    <a routerLink="/tienda" class="text-sm font-semibold uppercase hover:text-accent">Inicio</a>
+    <a routerLink="/tienda" class="text-sm font-semibold uppercase hover:text-accent">Tienda</a>
+    <a routerLink="/register" class="text-sm font-semibold uppercase hover:text-accent">Perfil</a>
+    <a routerLink="/carrito" class="relative text-sm font-semibold uppercase hover:text-accent">
+      Carrito
+      <span
+        *ngIf="cart.count > 0"
+        class="absolute -top-2 -right-4 bg-accent text-white text-xs font-bold rounded-full px-1.5"
+        >{{ cart.count }}</span
+      >
+    </a>
+  </nav>
+</header>
 
-<div >
-  <div>
-    <div class=" bg-[url('assets/imagenes/asdf.jpg')] space-y-4">
-      <div class="w-5/12 mx-auto  bg-white">
-        <div class="items-center" >
-          <div class="  pt-3 flex flex-wrap">
-            <div *ngIf="producto!=null">
-              <img class="w-fit rounded-lg	" [src]="producto.url_imagen" >
-            </div>
-          </div>
-
-        </div >
-
-        <div class=" border-2 rounded">
-          <div *ngIf="producto!=null">
-            <div ><p class="text-4xl text-center font-semibold ">{{producto.nombre}}</p></div>
-            <div >{{producto.descripcion}}</div>
-
-            <button class="bg-[#3babba] hover:bg-[#3bbbba] text-gray-50 font-semibold rounded-md">Añadir carrito</button><br>
-          </div>
-
-        </div>
-        <div>
-
-
-        </div>
+<main class="max-w-7xl mx-auto px-4 py-8">
+  <div
+    *ngIf="producto"
+    class="max-w-4xl mx-auto bg-white rounded-xl shadow-sm p-6 grid md:grid-cols-2 gap-8"
+  >
+    <img
+      [src]="producto.url_imagen"
+      class="w-full rounded-xl object-cover"
+      [alt]="producto.nombre"
+    >
+    <div class="flex flex-col gap-4">
+      <h1 class="text-2xl font-bold text-gray-900">{{producto.nombre}}</h1>
+      <p class="text-gray-600">{{producto.descripcion}}</p>
+      <div class="flex items-baseline gap-3">
+        <span class="text-3xl font-bold text-guinda">s/ {{producto.precio_oferta}}</span>
+        <span class="line-through text-lg text-gray-400">s/ {{producto.precio_unitario}}</span>
+      </div>
+      <p class="text-sm text-gray-500">{{producto.cantidad}} disponibles</p>
+      <div class="flex gap-2 mt-auto">
+        <button
+          (click)="cart.add(producto)"
+          class="bg-guinda hover:bg-guinda-dark text-white text-sm font-semibold rounded-lg px-4 py-2"
+        >
+          Agregar al carrito
+        </button>
+        <a
+          routerLink="/tienda"
+          class="border border-guinda text-guinda hover:bg-guinda hover:text-white text-sm font-semibold rounded-lg px-4 py-2 text-center"
+          >Volver a la tienda</a
+        >
       </div>
     </div>
   </div>
-</div>
 
-<!--
-<div class="flex flex-row space-x-4 place-content-evenly pt-2 pb-2 bg-[#6a1b0f]">
-  <div class="flex "><input type="text" [(ngModel)]="indice" style="border: 2px solid blue" class="rounded-md">
-  <button (click)="obtenerProducto()" class="bg-orange-700 text-gray-50 font-semibold rounded-md">Obtener Producto</button><br>
-  <button class="bg-orange-700 text-gray-50 font-semibold rounded-md"><a href="tienda">Ver tienda</a></button>
-  </div>
-</div>-->
-<div class="flex flex-row space-x-24 place-content-evenly pt-2 pb-2 bg-[#8e2929]">
-  <div class="flex space-x-4 "><input placeholder="Escriba el codigo" type="text" [(ngModel)]="indice" style="border: 2px solid blue" class="rounded-md">
-    <button (click)="obtenerProducto()" class="bg-[#3babba] hover:bg-[#3bbbba] text-gray-50 font-semibold rounded-md">Obtener Producto</button><br>
-    <button class="bg-[#3babba] hover:bg-[#3bbbba] text-gray-50 font-semibold rounded-md"><a href="tienda">Volver tienda</a></button>
-  </div>
-</div>
-<div class="bg-[url('assets/imagenes/asdf.jpg')]">
-  <div class=" w-9/12 mx-auto bg-[url('assets/imagenes/asdf.jpg')] space-y-4">
-    <div class="w-fit mx-auto bg-white">
-      <div class="box-border border-3 items-center" ><p class="text-center uppercase font-bold">Categoria</p></div>
-      <div class="  pt-3 grid grid-cols-4 gap-4  ">
-        <article *ngFor="let item of lista, let indice=index">
-          <div (click)="obtenerProducto()" class=" cursor-pointer box-border md:box-content border-2 rounded-lg min-h-sm curso static pt-1 pr-1 pb-1 pl-1 ">
-            <img [src]="item.url_imagen" class="img-responsive rounded-lg pb-2 w-screen	 h-56">
-            <div>
-              <div class="text-center"><p class="text-md font-semibold ">{{item.nombre}}</p></div>
-              <div><p class="text-xs">{{item.descripcion}}</p></div>
-            </div>
-            <div class="grid grid-cols-2 gap-1">
-              <div class="text-center line-through font-semibold">{{item.precio_unitario}}</div>
-              <div class="text-center ">{{item.precio_oferta}}</div>
-            </div>
-            <div>
-              <div class="border-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 " ><a class="btn" ><p class="text-sm  text-center" [routerLink]="['/detalle/',indice]">Más Detalle</p></a></div>
-            </div>
-            <div class="content-center text-center bg-[#fe0000] rounded flex"><span class="text-white text-xs font-bold">OFERTA</span></div>
-          </div>
-        </article>
+  <h2 class="text-2xl font-bold text-gray-900 uppercase tracking-wide mt-10 mb-6">
+    Más productos
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <article
+      *ngFor="let item of lista, let indice=index"
+      (click)="obtenerProducto()"
+      class="bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col relative"
+    >
+      <img [src]="item.url_imagen" class="w-full h-44 object-cover" [alt]="item.nombre">
+      <span
+        *ngIf="item.precio_oferta < item.precio_unitario"
+        class="absolute top-2 left-2 bg-guinda text-white text-xs font-bold px-2 py-0.5 rounded-full"
+        >OFERTA</span
+      >
+      <div class="p-4 flex-1">
+        <p class="font-semibold text-gray-900">{{item.nombre}}</p>
+        <p class="text-sm text-gray-500 line-clamp-2">{{item.descripcion}}</p>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span class="text-lg font-bold text-guinda">s/ {{item.precio_oferta}}</span>
+          <span class="line-through text-sm text-gray-400">s/ {{item.precio_unitario}}</span>
+        </div>
       </div>
-    </div>
+      <div class="p-4 pt-0 flex gap-2">
+        <button
+          (click)="cart.add(item)"
+          class="bg-guinda hover:bg-guinda-dark text-white text-sm font-semibold rounded-lg px-3 py-2 flex-1"
+        >
+          Agregar
+        </button>
+        <a
+          [routerLink]="['/detalle/',indice]"
+          class="border border-guinda text-guinda hover:bg-guinda hover:text-white text-sm font-semibold rounded-lg px-3 py-2 flex-1 text-center"
+          >Detalle</a
+        >
+      </div>
+    </article>
   </div>
-</div>
+</main>

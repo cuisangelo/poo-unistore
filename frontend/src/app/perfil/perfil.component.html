@@ -1,24 +1,50 @@
-<div class="flex flex-row space-x-4 pt-2 pb-2 bg-[#8e2929]">
-  <div class="pl-5"><img class=" rounded-lg h-7" src="assets/imagenes/icono.ico"></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">UNI Store</p></a></div>
-  <div class=" basis-1/2 grow"><p  class="text-center uppercase font-bold text-white font-['Verdana']">BIENVENIDO, {{ cliente?.nombres || '' | uppercase }}</p></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Inicio</p></a></div>
-  <div class=" basis-1/8"><a href="tienda" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Tienda</p></a></div>
-  <div class=" basis-1/8 pr-5"><a href="register" class="rounded-full cursor-pointer tracking-wider" ><p class="text-center uppercase font-bold text-white hover:text-[#3babba]">Perfil</p></a></div>
-</div>
-
-<div>
-
-  <div class="grid grid-cols-2">
-    <div class="p-6">
-      <img src="assets/imagenes/uni.jpg" class="rounded-lg" alt="Foto de perfil">
+<header class="bg-guinda text-white">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
+    <a routerLink="/tienda" class="flex items-center gap-2">
+      <img src="assets/imagenes/icono.ico" class="h-8 w-8 rounded" alt="UNI Store">
+      <span class="font-bold tracking-wide uppercase">UNI Store</span>
+    </a>
+    <div class="flex-1 text-center">
+      <span class="text-sm font-semibold uppercase"
+        >BIENVENIDO, {{ cliente?.nombres || '' | uppercase }}</span
+      >
     </div>
-    <div class="p-6 space-y-2">
-      <div><span class="font-bold uppercase">Nombres:</span> {{ cliente?.nombres }}</div>
-      <div><span class="font-bold uppercase">Apellidos:</span> {{ cliente?.apellidos }}</div>
-      <div><span class="font-bold uppercase">Dirección:</span> {{ cliente?.direccion }}</div>
-      <div><span class="font-bold uppercase">Teléfono:</span> {{ cliente?.telefono }}</div>
+    <a routerLink="/tienda" class="text-sm font-semibold uppercase hover:text-accent">Inicio</a>
+    <a routerLink="/tienda" class="text-sm font-semibold uppercase hover:text-accent">Tienda</a>
+    <a routerLink="/carrito" class="text-sm font-semibold uppercase hover:text-accent">Carrito</a>
+    <a routerLink="/register" class="text-sm font-semibold uppercase hover:text-accent">Perfil</a>
+  </nav>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 py-8">
+  <div class="bg-white rounded-xl shadow-sm p-8 grid sm:grid-cols-[auto,1fr] gap-8">
+    <img
+      src="assets/imagenes/uni.jpg"
+      class="rounded-xl h-40 w-40 object-cover"
+      alt="Foto de perfil"
+    >
+    <div class="space-y-4">
+      <div>
+        <p class="uppercase text-xs text-gray-500">Nombres</p>
+        <p class="font-medium text-gray-900">{{ cliente?.nombres }}</p>
+      </div>
+      <div>
+        <p class="uppercase text-xs text-gray-500">Apellidos</p>
+        <p class="font-medium text-gray-900">{{ cliente?.apellidos }}</p>
+      </div>
+      <div>
+        <p class="uppercase text-xs text-gray-500">Dirección</p>
+        <p class="font-medium text-gray-900">{{ cliente?.direccion }}</p>
+      </div>
+      <div>
+        <p class="uppercase text-xs text-gray-500">Teléfono</p>
+        <p class="font-medium text-gray-900">{{ cliente?.telefono }}</p>
+      </div>
+      <a
+        [routerLink]="['/tienda/',indice]"
+        class="inline-block bg-guinda hover:bg-guinda-dark text-white font-semibold rounded-lg px-4 py-2.5"
+        >Tienda</a
+      >
     </div>
-    <div class="border-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 " ><a class="btn" ><p class="text-sm  text-center" [routerLink]="['/tienda/',indice]">Tienda</p></a></div>
   </div>
-</div>
+</main>
