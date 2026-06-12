@@ -1,9 +1,0 @@
-/* You can add global styles to this file, and also import other style files */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-
-.btn{
-  @apply rounded-full py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
-}
