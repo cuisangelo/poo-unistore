@@ -20,7 +20,8 @@ $banner-mask: linear-gradient(to bottom, white, transparent),
     rgba(0, 149, 255, 0.56) 50%
   );
   background-size: 200% 100%;
-  filter: saturate(2);
+  filter: saturate(1.8);
+  opacity: 0.55;
   animation: demo-banner-flow 20s linear infinite;
 }
 
