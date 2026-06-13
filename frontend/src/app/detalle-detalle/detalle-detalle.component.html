@@ -63,7 +63,7 @@
       (click)="obtenerProducto()"
       class="bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col relative"
     >
-      <img [src]="item.url_imagen" class="w-full h-44 object-cover" [alt]="item.nombre">
+      <img [src]="item.url_imagen" class="w-full aspect-[3/2] object-cover" [alt]="item.nombre">
       <span
         *ngIf="item.precio_oferta < item.precio_unitario"
         class="absolute top-2 left-2 bg-guinda text-white text-xs font-bold px-2 py-0.5 rounded-full"
