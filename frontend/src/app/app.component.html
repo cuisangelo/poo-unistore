@@ -1,12 +1,15 @@
 <div
   *ngIf="demo && bannerOpen"
-  class="demo-banner sticky top-0 z-40 flex h-11 items-center justify-center bg-zinc-950 px-12 text-center text-[13px] font-medium tracking-wide text-zinc-100"
+  class="demo-banner sticky top-0 z-40 flex h-10 items-center justify-center border-b border-white/10 bg-zinc-950 px-12 text-center text-[13px] font-medium text-zinc-300"
 >
   <div class="demo-banner-flow absolute inset-0" aria-hidden="true"></div>
-  <span class="relative"
-    >🧪 UNI Store · maqueta académica (POO, 2022) — demo con datos ficticios:
-    los cambios no se guardan.</span
-  >
+  <div class="relative flex items-center gap-2.5">
+    <span class="demo-dot" aria-hidden="true"></span>
+    <span>
+      <span class="font-semibold text-zinc-100">Entorno de demostración</span>
+      · datos simulados, solo de referencia. Los cambios no se guardan.
+    </span>
+  </div>
   <button
     type="button"
     aria-label="Cerrar aviso"
