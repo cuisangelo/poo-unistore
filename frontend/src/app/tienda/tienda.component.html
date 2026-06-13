@@ -19,40 +19,59 @@
   </nav>
 </header>
 
-<main class="max-w-7xl mx-auto px-4 py-8">
-  <h1 class="text-2xl font-bold text-gray-900 uppercase tracking-wide mb-6">
-    Tienda
-  </h1>
+<main class="max-w-7xl mx-auto px-4 py-10">
+  <header class="mb-8">
+    <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-accent-600">
+      Tienda universitaria
+    </p>
+    <h1 class="font-display text-4xl font-semibold tracking-tight text-ink">
+      Lo nuevo en UNI Store
+    </h1>
+    <p class="mt-2 max-w-xl text-ink-2">
+      Merch oficial y útiles para tu día en la universidad. Aprovecha las
+      ofertas de la semana.
+    </p>
+  </header>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     <article
       *ngFor="let item of lista, let indice=index"
-      class="bg-white rounded-xl shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col relative"
+      class="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-white shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"
     >
-      <img [src]="item.url_imagen" class="w-full h-44 object-cover" [alt]="item.nombre">
-      <span
-        *ngIf="item.precio_oferta < item.precio_unitario"
-        class="absolute top-2 left-2 bg-guinda text-white text-xs font-bold px-2 py-0.5 rounded-full"
-        >OFERTA</span
-      >
-      <div class="p-4 flex-1">
-        <p class="font-semibold text-gray-900">{{item.nombre}}</p>
-        <p class="text-sm text-gray-500 line-clamp-2">{{item.descripcion}}</p>
-        <div class="mt-2 flex items-baseline gap-2">
-          <span class="text-lg font-bold text-guinda">s/ {{item.precio_oferta}}</span>
-          <span class="line-through text-sm text-gray-400">s/ {{item.precio_unitario}}</span>
+      <div class="relative aspect-[4/5] overflow-hidden bg-sand">
+        <img
+          [src]="item.url_imagen"
+          [alt]="item.nombre"
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        >
+        <span
+          *ngIf="item.precio_oferta < item.precio_unitario"
+          class="absolute left-3 top-3 rounded-full bg-guinda px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-sm"
+          >Oferta</span
+        >
+      </div>
+      <div class="flex flex-1 flex-col p-4">
+        <p class="font-semibold text-ink">{{item.nombre}}</p>
+        <p class="mt-0.5 line-clamp-2 text-sm text-ink-2">{{item.descripcion}}</p>
+        <div class="mt-3 flex items-baseline gap-2">
+          <span class="price text-xl font-bold text-guinda">s/ {{item.precio_oferta}}</span>
+          <span
+            *ngIf="item.precio_oferta < item.precio_unitario"
+            class="price text-sm text-ink-muted line-through"
+            >s/ {{item.precio_unitario}}</span
+          >
         </div>
       </div>
-      <div class="p-4 pt-0 flex gap-2">
+      <div class="flex gap-2 p-4 pt-0">
         <button
           (click)="cart.add(item)"
-          class="bg-guinda hover:bg-guinda-dark text-white text-sm font-semibold rounded-lg px-3 py-2 flex-1"
+          class="flex-1 rounded-full bg-guinda px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-guinda-dark"
         >
           Agregar
         </button>
         <a
           [routerLink]="['/detalle/',indice]"
-          class="border border-guinda text-guinda hover:bg-guinda hover:text-white text-sm font-semibold rounded-lg px-3 py-2 flex-1 text-center"
+          class="flex-1 rounded-full border border-guinda px-3 py-2 text-center text-sm font-semibold text-guinda transition-colors hover:bg-guinda hover:text-white"
           >Detalle</a
         >
       </div>
